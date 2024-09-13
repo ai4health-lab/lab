@@ -1,0 +1,17 @@
+# 菜单配置
+menu:
+  home: 首页
+  members: 研究成员
+  research: 研究方向
+  publications: 发表论文
+  tools: 软件工具
+#侧边栏1
+join:
+  title: 加入我们
+  content: 博士生和研究生申请
+
+
+#侧边栏2
+common:
+  title: 常用链接
+  link1: 联系我们

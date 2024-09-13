@@ -1,0 +1,16 @@
+# 菜单配置
+menu:
+  home: home
+  members: members
+  research: research
+  publications: publications
+  tools: tools
+#侧边栏1
+join:
+  title: Join Us
+  content: PhD and Graduate Applications
+
+#侧边栏2
+common:
+  title: Common Links
+  link1: concat us

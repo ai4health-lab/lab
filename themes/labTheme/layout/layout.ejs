@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= config.title %></title>
+    <link rel="stylesheet" href="<%- url_for('/css/custom.css') %>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<!-- 引用 header.ejs -->
+<%- partial('header') %>
+
+<!-- 内容区域 -->
+<div class="container" style="display: flex; justify-content: space-between; max-width: 1050px; margin: 0 auto; min-height: 500px">
+    <!-- 内容区域 -->
+    <div class="content" style="flex: 1; padding-right: 1%">
+        <%- body %>
+    </div>
+    <!-- 侧边栏区域 -->
+    <div class="sidebars" style="display: flex; flex-direction: column; gap: 20px;"> <!-- 使用 flex-direction: column; 让侧边栏上下排列，并设置间距 -->
+        <% if (typeof page.sidebar1 === 'undefined' || page.sidebar1 === true) { %> <!-- 默认显示侧边栏，除非明确设置为 false -->
+        <%- partial('sidebar1') %>
+        <% } %>
+        <% if (typeof page.sidebar2 === 'undefined' || page.sidebar2 === true) { %> <!-- 默认显示侧边栏，除非明确设置为 false -->
+        <%- partial('sidebar2') %>
+        <% } %>
+    </div>
+</div>
+<!-- 引用 footer.ejs -->
+<%- partial('footer') %>
+
+<script>
+    // 获取指定名称的 cookie
+    function getCookie(name) {
+        let value = "; " + document.cookie;
+        let parts = value.split("; " + name + "=");
+        if (parts.length === 2) return parts.pop().split(";").shift();
+    }
+
+    // 获取语言设置
+    var lang = getCookie('lang') || 'zh'; // 默认使用 'zh'
+</script>
+
+</body>
+</html>

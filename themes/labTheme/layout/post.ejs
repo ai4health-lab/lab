@@ -1,0 +1,74 @@
+<article class="post">
+    <header class="post-header">
+        <div class="post-title">
+            <h3><%= page.title %></h3>
+        </div>
+        <% if (page.date && page.showDate !== false) { %>
+            <%
+                var date = new Date(page.date);
+                var year = date.getFullYear(); // 获取年份
+                var month = ('0' + (date.getMonth() + 1)).slice(-2); // 获取月份，确保两位数
+                var day = ('0' + date.getDate()).slice(-2); // 获取日期，确保两位数
+                var dateString = year + '-' + month + '-' + day; // 拼接为 YYYY-MM-DD 格式
+            %>
+            <div class="post-date">
+                <p><%= dateString %></p>
+            </div>
+        <% } %>
+    </header>
+    <div class="post-content">
+        <%- page.content %>
+    </div>
+</article>
+
+<style>
+    .post {
+        border: 2px solid #418ac8; /* 蓝色边框 */
+        border-radius: 5px;
+        margin: 3px auto;
+        max-width: 1050px;
+        min-height: 450px;
+        background-color: #f9f9f9;
+        position: relative; /* 添加以确保 post-date 绝对定位 */
+        padding-top: 0; /* 确保顶部边距与标题对齐 */
+    }
+
+    .post-header {
+        margin: 0; /* 移除 header 外边距 */
+    }
+
+    .post-title {
+        background-color: #418ac8; /* 蓝色背景 */
+        height: 22px;
+        color: white;
+        padding: 10px; /* 内边距，确保文本不会紧贴边缘 */
+        margin: 0; /* 移除外边距 */
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        position: relative;
+        z-index: 1; /* 确保标题在内容之上 */
+        box-shadow: 0 0 0 2px #418ac8; /* 确保左边框和上边框的颜色 */
+        margin: -2px 0 0 -2px; /* 确保背景色紧挨左边框和上边框 */
+    }
+
+    .post-title h3 {
+        margin: 0;
+        font-weight: bold; /* 加粗字体 */
+    }
+
+    .post-date {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        font-size: 0.9em;
+        color: #000000;
+        padding: 5px 10px;
+        border-radius: 3px;
+    }
+
+
+    .post-content {
+        padding: 20px;
+        line-height: 1.6;
+    }
+</style>
