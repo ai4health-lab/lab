@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Digital Life and Intelligent Health Laboratory</title>
+    <link rel="stylesheet" href="/lab/css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+<!-- 引用 header.ejs -->
+<header class="site-header">
+    <!-- 实验室名称 -->
+    <div class="lab-name">
+        <h1>数基生命与智能健康实验室</h1>
+        <h2>Digital Life and Intelligent Health Laboratory</h2>
+    </div>
+
+    <!-- Banner 图片 -->
+    <div class="banner">
+        <img src="/images/banner.png" alt="实验室Banner">
+    </div>
+
+    <!-- 导航栏和语言切换器容器 -->
+    <div class="nav-container">
+        <!-- 导航栏 -->
+        <nav class="nav-bar">
+            <ul>
+                <!-- 获取当前语言 -->
+                
+                <!-- 解析每个菜单项 -->
+                
+
+                <!-- 菜单链接的对应地址 -->
+                
+
+                
+                    <li>
+                        <a href="/zh/"
+                           class="">
+                            首页 <!-- 动态获取当前语言菜单名 -->
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/zh/members/"
+                           class="">
+                            研究成员 <!-- 动态获取当前语言菜单名 -->
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/zh/research/"
+                           class="">
+                            研究方向 <!-- 动态获取当前语言菜单名 -->
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/zh/publications/"
+                           class="">
+                            发表论文 <!-- 动态获取当前语言菜单名 -->
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/zh/tools/"
+                           class="">
+                            软件工具 <!-- 动态获取当前语言菜单名 -->
+                        </a>
+                    </li>
+                
+
+            </ul>
+            <!-- 语言切换滑动栏 -->
+            <div class="language-switcher">
+                <div class="switch">
+                    <div class="slider" data-lang="zh" onclick="switchLanguage('zh')">中文</div>
+                    <div class="slider" data-lang="en" onclick="switchLanguage('en')">English</div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <script>
+        // 获取当前语言
+        function currentLang() {
+            var lang = document.cookie.replace(/(?:(?:^|.*;\s*)lang\s*\=\s*([^;]*).*$)|^.*$/, "$1") || 'zh,en,default';
+            if (!lang) {
+                lang = 'zh,en,default'; // 从 config.yml 中获取默认语言
+                document.cookie = "lang=" + lang + "; path=/";
+            }
+            return lang;
+        }
+
+        // 切换语言，并根据当前语言更新页面的路径
+        function switchLanguage(lang) {
+            var currentPath = window.location.pathname;
+            var newPath = currentPath.replace(/^\/(en|zh)/, ''); // 移除当前的语言前缀
+
+            if (lang === 'zh') {
+                newPath = '/zh' + newPath; // 重新添加语言前缀
+            } else {
+                newPath = '/en' + newPath;
+            }
+
+            document.cookie = "lang=" + lang + "; path=/"; // 存储新的语言设置
+
+            // 检查是否需要重定向到根路径
+            if (newPath==='/') {
+                console.log('Redirecting to /');
+                window.location.href = `/${lang}/`; // 跳转到首页
+            } else {
+                console.log('Redirecting to:', newPath);
+                window.location.href = newPath; // 跳转到新的路径
+            }
+        }
+
+        // 页面加载后设置语言切换器的样式以及重定向/zh/和/en/到/
+        document.addEventListener('DOMContentLoaded', function () {
+            var lang = currentLang();
+            document.querySelectorAll('.switch .slider').forEach(function (slider) {
+                if (slider.getAttribute('data-lang') === lang) {
+                    slider.classList.add('active'); // 给选中的语言加上 active 样式
+                } else {
+                    slider.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</header>
+
+
+<!-- 内容区域 -->
+<div class="container" style="display: flex; justify-content: space-between; max-width: 1050px; margin: 0 auto; min-height: 500px">
+    <!-- 内容区域 -->
+    <div class="content" style="flex: 1; padding-right: 1%">
+        <article class="post">
+    <header class="post-header">
+        <div class="post-title">
+            <h3>软件工具</h3>
+        </div>
+        
+    </header>
+    <div class="post-content">
+        
+    </div>
+</article>
+
+<style>
+    .post {
+        border: 2px solid #418ac8; /* 蓝色边框 */
+        border-radius: 5px;
+        margin: 3px auto;
+        max-width: 1050px;
+        min-height: 450px;
+        background-color: #f9f9f9;
+        position: relative; /* 添加以确保 post-date 绝对定位 */
+        padding-top: 0; /* 确保顶部边距与标题对齐 */
+    }
+
+    .post-header {
+        margin: 0; /* 移除 header 外边距 */
+    }
+
+    .post-title {
+        background-color: #418ac8; /* 蓝色背景 */
+        height: 22px;
+        color: white;
+        padding: 10px; /* 内边距，确保文本不会紧贴边缘 */
+        margin: 0; /* 移除外边距 */
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        position: relative;
+        z-index: 1; /* 确保标题在内容之上 */
+        box-shadow: 0 0 0 2px #418ac8; /* 确保左边框和上边框的颜色 */
+        margin: -2px 0 0 -2px; /* 确保背景色紧挨左边框和上边框 */
+    }
+
+    .post-title h3 {
+        margin: 0;
+        font-weight: bold; /* 加粗字体 */
+    }
+
+    .post-date {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        font-size: 0.9em;
+        color: #000000;
+        padding: 5px 10px;
+        border-radius: 3px;
+    }
+
+
+    .post-content {
+        padding: 20px;
+        line-height: 1.6;
+    }
+</style>
+
+    </div>
+    <!-- 侧边栏区域 -->
+    <div class="sidebars" style="display: flex; flex-direction: column; gap: 20px;"> <!-- 使用 flex-direction: column; 让侧边栏上下排列，并设置间距 -->
+         <!-- 默认显示侧边栏，除非明确设置为 false -->
+        <!-- 侧边栏 -->
+<div class="sidebar">
+    <h3><i class="fas fa-paper-plane"></i> 加入我们</h3>
+    <a href="/zh/join/">博士生和研究生申请</a>
+</div>
+
+<style>
+    .sidebar {
+        width: 250px;
+        height: 120px;
+        border: 2px solid #418ac8;
+        border-radius: 5px;
+        background-color: #f9f9f9; /* 背景色 */
+    }
+
+    .sidebar h3 {
+        background-color: #418ac8;
+        color: white;
+        padding: 10px;
+        margin: 0; /* 移除默认的 margin */
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+
+    .sidebar a {
+        display: block;
+        text-align: center;
+        padding: 10px 0;
+        margin: 10px;
+        color: #000000;
+        font-size: 16px;
+        text-decoration: none; /* 移除默认的下划线 */
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .sidebar a:hover {
+        background-color: #316ba8; /* 悬停时背景色 */
+    }
+
+    .sidebar p {
+        padding: 10px;
+        margin: 0;
+    }
+</style>
+
+        
+         <!-- 默认显示侧边栏，除非明确设置为 false -->
+        <!-- 侧边栏 -->
+<div class="sidebar">
+    <h3><i class="fas fa-list"></i> 常用链接</h3>
+    <a href="/zh/members/">联系我们</a>
+</div>
+
+<style>
+    .sidebar {
+        width: 250px;
+        height: 120px;
+        border: 2px solid #418ac8;
+        border-radius: 5px;
+        background-color: #f9f9f9; /* 背景色 */
+    }
+
+    .sidebar h3 {
+        background-color: #418ac8;
+        color: white;
+        padding: 10px;
+        margin: 0; /* 移除默认的 margin */
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+
+    .sidebar a {
+        display: block;
+        text-align: center;
+        padding: 10px 0;
+        margin: 10px;
+        color: #000000;
+        font-size: 16px;
+        text-decoration: none; /* 移除默认的下划线 */
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .sidebar a:hover {
+        background-color: #316ba8; /* 悬停时背景色 */
+    }
+
+    .sidebar p {
+        padding: 10px;
+        margin: 0;
+    }
+</style>
+
+        
+    </div>
+</div>
+<!-- 引用 footer.ejs -->
+<footer class="site-footer">
+    <div class="footer-content" style="max-width: 1200px; margin: 0 auto; text-align: center; padding: 20px;">
+        <!-- 底部信息 -->
+        <p>© 2024 数基生命与智能健康实验室. All rights reserved.</p>
+        <p>地址: xxxxxxxxx | 联系方式: xxxxxxxxxx | 邮箱: xxxx@qq.com</p>
+    </div>
+</footer>
+
+
+
+<script>
+    // 获取指定名称的 cookie
+    function getCookie(name) {
+        let value = "; " + document.cookie;
+        let parts = value.split("; " + name + "=");
+        if (parts.length === 2) return parts.pop().split(";").shift();
+    }
+
+    // 获取语言设置
+    var lang = getCookie('lang') || 'zh'; // 默认使用 'zh'
+</script>
+
+</body>
+</html>
