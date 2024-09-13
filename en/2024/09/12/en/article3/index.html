@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Digital Life and Intelligent Health Laboratory</title>
-    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/lab/css/custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body>
@@ -19,7 +19,7 @@
 
     <!-- Banner 图片 -->
     <div class="banner">
-        <img src="/images/banner.png" alt="实验室Banner">
+        <img src="/lab/images/banner.png" alt="实验室Banner">
     </div>
 
     <!-- 导航栏和语言切换器容器 -->
@@ -37,35 +37,35 @@
 
                 
                     <li>
-                        <a href="/en/"
+                        <a href="/lab/en/"
                            class="">
                             home <!-- 动态获取当前语言菜单名 -->
                         </a>
                     </li>
                 
                     <li>
-                        <a href="/en/members/"
+                        <a href="/lab/en/members/"
                            class="">
                             members <!-- 动态获取当前语言菜单名 -->
                         </a>
                     </li>
                 
                     <li>
-                        <a href="/en/research/"
+                        <a href="/lab/en/research/"
                            class="">
                             research <!-- 动态获取当前语言菜单名 -->
                         </a>
                     </li>
                 
                     <li>
-                        <a href="/en/publications/"
+                        <a href="/lab/en/publications/"
                            class="">
                             publications <!-- 动态获取当前语言菜单名 -->
                         </a>
                     </li>
                 
                     <li>
-                        <a href="/en/tools/"
+                        <a href="/lab/en/tools/"
                            class="">
                             tools <!-- 动态获取当前语言菜单名 -->
                         </a>
@@ -94,13 +94,16 @@
             return lang;
         }
 
-        // 切换语言，并根据当前语言更新页面的路径
         function switchLanguage(lang) {
             var currentPath = window.location.pathname;
-            var newPath = currentPath.replace(/^\/(en|zh)/, ''); // 移除当前的语言前缀
+            var root = '/lab'; // 根路径
 
+            // 移除当前的语言前缀以及根路径
+            var newPath = currentPath.replace(/^\/lab\/(en|zh)/, '').replace(/^\/lab/, '');
+
+            // 根据语言添加前缀
             if (lang === 'zh') {
-                newPath = '/zh' + newPath; // 重新添加语言前缀
+                newPath = '/zh' + newPath;
             } else {
                 newPath = '/en' + newPath;
             }
@@ -108,14 +111,15 @@
             document.cookie = "lang=" + lang + "; path=/"; // 存储新的语言设置
 
             // 检查是否需要重定向到根路径
-            if (newPath==='/') {
+            if (newPath === '/lab/') {
                 console.log('Redirecting to /');
-                window.location.href = `/${lang}/`; // 跳转到首页
+                window.location.href = root + `/${lang}/`; // 跳转到首页
             } else {
                 console.log('Redirecting to:', newPath);
-                window.location.href = newPath; // 跳转到新的路径
+                window.location.href = root + newPath; // 跳转到新的路径
             }
         }
+
 
         // 页面加载后设置语言切换器的样式以及重定向/zh/和/en/到/
         document.addEventListener('DOMContentLoaded', function () {
