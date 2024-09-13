@@ -37,7 +37,7 @@
 
                 <% Object.keys(menuLinks).forEach(function(key) { %>
                     <li>
-                        <a href="<%= menuLinks[key] %>"
+                        <a href="<%='/lab'+ menuLinks[key] %>"
                            class="<%= '/' + page.path === (menuLinks[key]) ? 'active' : '' %>">
                             <%= menuI18n[key] || key %> <!-- 动态获取当前语言菜单名 -->
                         </a>
@@ -66,13 +66,16 @@
             return lang;
         }
 
-        // 切换语言，并根据当前语言更新页面的路径
         function switchLanguage(lang) {
             var currentPath = window.location.pathname;
-            var newPath = currentPath.replace(/^\/(en|zh)/, ''); // 移除当前的语言前缀
+            var root = '/lab'; // 根路径
 
+            // 移除当前的语言前缀以及根路径
+            var newPath = currentPath.replace(/^\/lab\/(en|zh)/, '').replace(/^\/lab/, '');
+
+            // 根据语言添加前缀
             if (lang === 'zh') {
-                newPath = '/zh' + newPath; // 重新添加语言前缀
+                newPath = '/zh' + newPath;
             } else {
                 newPath = '/en' + newPath;
             }
@@ -80,14 +83,15 @@
             document.cookie = "lang=" + lang + "; path=/"; // 存储新的语言设置
 
             // 检查是否需要重定向到根路径
-            if (newPath==='/') {
+            if (newPath === '/lab/') {
                 console.log('Redirecting to /');
-                window.location.href = `/${lang}/`; // 跳转到首页
+                window.location.href = root + `/${lang}/`; // 跳转到首页
             } else {
                 console.log('Redirecting to:', newPath);
-                window.location.href = newPath; // 跳转到新的路径
+                window.location.href = root + newPath; // 跳转到新的路径
             }
         }
+
 
         // 页面加载后设置语言切换器的样式以及重定向/zh/和/en/到/
         document.addEventListener('DOMContentLoaded', function () {
