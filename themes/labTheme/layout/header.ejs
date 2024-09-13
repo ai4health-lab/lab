@@ -16,7 +16,7 @@
         <nav class="nav-bar">
             <ul>
                 <!-- 获取当前语言 -->
-                <% var lang = currentLang() || config.language || 'zh'; %>
+                <% var lang = currentLang() || config.default_language || 'zh'; %>
                 <!-- 解析每个菜单项 -->
                 <% var menuI18n = {
                     home: __('menu.home'),
@@ -56,43 +56,63 @@
     </div>
 
     <script>
-        // 获取当前语言
-        function currentLang() {
-            var lang = document.cookie.replace(/(?:(?:^|.*;\s*)lang\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '<%= config.language || "zh" %>';
-            if (!lang) {
-                lang = '<%= config.language || "zh" %>'; // 从 config.yml 中获取默认语言
-                document.cookie = "lang=" + lang + "; path=/";
+        // 设置cookie
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
             }
-            return lang;
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
         }
 
+        // 获取cookie
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        // 切换语言并设置cookie
         function switchLanguage(lang) {
             var currentPath = window.location.pathname;
             var root = '/lab'; // 根路径
 
-            // 移除当前的语言前缀以及根路径
             var newPath = currentPath.replace(/^\/lab\/(en|zh)/, '').replace(/^\/lab/, '');
 
-            // 解决文章页面有 en 和 zh 目录的问题
             if (newPath.includes('zh') || newPath.includes('en')) {
                 newPath = newPath.replace(/\/zh\//, `/${lang}/`).replace(/\/en\//, `/${lang}/`);
             }
 
-            // 根据语言添加前缀
             if (lang === 'zh') {
                 newPath = '/zh' + newPath;
             } else {
                 newPath = '/en' + newPath;
             }
 
-            document.cookie = "lang=" + lang + "; path=/"; // 存储新的语言设置
+            setCookie("lang", lang, 365); // 存储语言设置，过期时间为365天
 
-            // 检查是否需要重定向到根路径
             if (newPath === '/lab/') {
-                window.location.href = root + `/${lang}/`; // 跳转到首页
+                window.location.href = root + `/${lang}/`;
             } else {
-                window.location.href = root + newPath; // 跳转到新的路径
+                window.location.href = root + newPath;
             }
+        }
+
+        // 获取当前语言并从cookie中读取
+        function currentLang() {
+            var lang = getCookie('lang') || '<%= config.default_language || "zh" %>';
+            if (!lang) {
+                lang = '<%= config.default_language || "zh" %>';
+                setCookie("lang", lang, 365);
+            }
+            return lang;
         }
 
         // 页面加载后设置语言切换器的样式
