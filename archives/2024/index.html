@@ -121,7 +121,7 @@
         }
 
 
-        // 页面加载后设置语言切换器的样式以及重定向/zh/和/en/到/
+        // 页面加载后设置语言切换器的样式
         document.addEventListener('DOMContentLoaded', function () {
             var lang = currentLang();
             document.querySelectorAll('.switch .slider').forEach(function (slider) {
@@ -141,6 +141,84 @@
     <!-- 内容区域 -->
     <div class="content" style="flex: 1; padding-right: 1%">
         
+
+<div class="post-list">
+    
+        
+            <div class="post-item" style="margin-bottom: 20px;">
+                <h2>
+                    <a href="https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article1/" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article1/')">基于深度学习的医学图像诊断：从理论到实践</a>
+                </h2>
+                <p>这篇文章探讨了深度学习技术在医学图像诊断中的应用。文章首先介绍了深度学习的基本概念和算法，如卷积神经网络（CNN），然后详细说明了其在医学图像分析中的实际应用，包括肿瘤检测、器官分割和病变分类。文章还讨论了当前技术的挑战和未来的发展方向。</p>
+                <p class="post-date" style="margin-left: -10px;">2024-09-12</p>
+                <a href="https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article1/" class="post-detail-link" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article1/')">详细</a>
+            </div>
+        
+            <div class="post-item" style="margin-bottom: 20px;">
+                <h2>
+                    <a href="https://xuewenrui.github.io/lab/zh/2024/09/19/zh/article11/" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/zh/2024/09/19/zh/article11/')">人工智能在医疗数据管理中的应用</a>
+                </h2>
+                <p></p>
+                <p class="post-date" style="margin-left: -10px;">2024-09-19</p>
+                <a href="https://xuewenrui.github.io/lab/zh/2024/09/19/zh/article11/" class="post-detail-link" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/zh/2024/09/19/zh/article11/')">详细</a>
+            </div>
+        
+            <div class="post-item" style="margin-bottom: 20px;">
+                <h2>
+                    <a href="https://xuewenrui.github.io/lab/zh/2024/09/18/zh/article10/" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/zh/2024/09/18/zh/article10/')">基因组学中的数据挖掘技术</a>
+                </h2>
+                <p></p>
+                <p class="post-date" style="margin-left: -10px;">2024-09-18</p>
+                <a href="https://xuewenrui.github.io/lab/zh/2024/09/18/zh/article10/" class="post-detail-link" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/zh/2024/09/18/zh/article10/')">详细</a>
+            </div>
+        
+            <div class="post-item" style="margin-bottom: 20px;">
+                <h2>
+                    <a href="https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article2/" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article2/')">人工智能在基因组学中的应用：解码生命的密码</a>
+                </h2>
+                <p></p>
+                <p class="post-date" style="margin-left: -10px;">2024-09-12</p>
+                <a href="https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article2/" class="post-detail-link" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article2/')">详细</a>
+            </div>
+        
+            <div class="post-item" style="margin-bottom: 20px;">
+                <h2>
+                    <a href="https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article3/" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article3/')">医学图像与基因数据融合：人工智能的新时代</a>
+                </h2>
+                <p></p>
+                <p class="post-date" style="margin-left: -10px;">2024-09-12</p>
+                <a href="https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article3/" class="post-detail-link" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article3/')">详细</a>
+            </div>
+        
+    
+</div>
+
+<style>
+    .post-detail-link {
+        color: blue;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .post-detail-link:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<script>
+    function clearPath(event, url) {
+        event.preventDefault(); // 阻止默认链接行为
+
+        // 获取 root 路径
+        const rootPath = '/lab/';
+
+        // 清除浏览器 URL 中的路径，保留 root 路径
+        window.history.pushState(null, null, rootPath);
+
+        // 重定向到实际的文章页面
+        window.location.href = url;
+    }
+</script>
+
     </div>
     <!-- 侧边栏区域 -->
     <div class="sidebars" style="display: flex; flex-direction: column; gap: 20px;"> <!-- 使用 flex-direction: column; 让侧边栏上下排列，并设置间距 -->

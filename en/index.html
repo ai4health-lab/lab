@@ -121,7 +121,7 @@
         }
 
 
-        // 页面加载后设置语言切换器的样式以及重定向/zh/和/en/到/
+        // 页面加载后设置语言切换器的样式
         document.addEventListener('DOMContentLoaded', function () {
             var lang = currentLang();
             document.querySelectorAll('.switch .slider').forEach(function (slider) {
@@ -141,6 +141,84 @@
     <!-- 内容区域 -->
     <div class="content" style="flex: 1; padding-right: 1%">
         
+
+<div class="post-list">
+    
+        
+            <div class="post-item" style="margin-bottom: 20px;">
+                <h2>
+                    <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article1/" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article1/')">Deep Learning-Based Medical Image Diagnosis：From Theory to Practice</a>
+                </h2>
+                <p>This article explores the application of deep learning techniques in medical image diagnosis. It begins by introducing the basic concepts and algorithms of deep learning, such as convolutional neural networks (CNNs), then details their practical use in medical image analysis, including tumor detection, organ segmentation, and lesion classification. The article also discusses the challenges of current technology and future developments.</p>
+                <p class="post-date" style="margin-left: -10px;">2024-09-12</p>
+                <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article1/" class="post-detail-link" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article1/')">详细</a>
+            </div>
+        
+            <div class="post-item" style="margin-bottom: 20px;">
+                <h2>
+                    <a href="https://xuewenrui.github.io/lab/en/2024/09/18/en/article10/" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/en/2024/09/18/en/article10/')">Data Mining Techniques in Genomics</a>
+                </h2>
+                <p></p>
+                <p class="post-date" style="margin-left: -10px;">2024-09-18</p>
+                <a href="https://xuewenrui.github.io/lab/en/2024/09/18/en/article10/" class="post-detail-link" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/en/2024/09/18/en/article10/')">详细</a>
+            </div>
+        
+            <div class="post-item" style="margin-bottom: 20px;">
+                <h2>
+                    <a href="https://xuewenrui.github.io/lab/en/2024/09/19/en/article11/" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/en/2024/09/19/en/article11/')">Applications of Artificial Intelligence in Medical Data Management</a>
+                </h2>
+                <p></p>
+                <p class="post-date" style="margin-left: -10px;">2024-09-19</p>
+                <a href="https://xuewenrui.github.io/lab/en/2024/09/19/en/article11/" class="post-detail-link" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/en/2024/09/19/en/article11/')">详细</a>
+            </div>
+        
+            <div class="post-item" style="margin-bottom: 20px;">
+                <h2>
+                    <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article2/" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article2/')">Applications of Artificial Intelligence in Genomics： Decoding the Code of Life</a>
+                </h2>
+                <p></p>
+                <p class="post-date" style="margin-left: -10px;">2024-09-12</p>
+                <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article2/" class="post-detail-link" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article2/')">详细</a>
+            </div>
+        
+            <div class="post-item" style="margin-bottom: 20px;">
+                <h2>
+                    <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article4/" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article4/')">Integration of Medical Imaging and Genomic Data</a>
+                </h2>
+                <p></p>
+                <p class="post-date" style="margin-left: -10px;">2024-09-12</p>
+                <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article4/" class="post-detail-link" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article4/')">详细</a>
+            </div>
+        
+    
+</div>
+
+<style>
+    .post-detail-link {
+        color: blue;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .post-detail-link:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<script>
+    function clearPath(event, url) {
+        event.preventDefault(); // 阻止默认链接行为
+
+        // 获取 root 路径
+        const rootPath = '/lab/';
+
+        // 清除浏览器 URL 中的路径，保留 root 路径
+        window.history.pushState(null, null, rootPath);
+
+        // 重定向到实际的文章页面
+        window.location.href = url;
+    }
+</script>
+
     </div>
     <!-- 侧边栏区域 -->
     <div class="sidebars" style="display: flex; flex-direction: column; gap: 20px;"> <!-- 使用 flex-direction: column; 让侧边栏上下排列，并设置间距 -->
