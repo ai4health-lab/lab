@@ -101,6 +101,11 @@
             // 移除当前的语言前缀以及根路径
             var newPath = currentPath.replace(/^\/lab\/(en|zh)/, '').replace(/^\/lab/, '');
 
+            // 解决文章页面有 en 和 zh 目录的问题
+            if (newPath.includes('zh') || newPath.includes('en')) {
+                newPath = newPath.replace(/\/zh\//, `/${lang}/`).replace(/\/en\//, `/${lang}/`);
+            }
+
             // 根据语言添加前缀
             if (lang === 'zh') {
                 newPath = '/zh' + newPath;
@@ -112,14 +117,11 @@
 
             // 检查是否需要重定向到根路径
             if (newPath === '/lab/') {
-                console.log('Redirecting to /');
                 window.location.href = root + `/${lang}/`; // 跳转到首页
             } else {
-                console.log('Redirecting to:', newPath);
                 window.location.href = root + newPath; // 跳转到新的路径
             }
         }
-
 
         // 页面加载后设置语言切换器的样式
         document.addEventListener('DOMContentLoaded', function () {

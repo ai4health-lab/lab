@@ -101,6 +101,11 @@
             // 移除当前的语言前缀以及根路径
             var newPath = currentPath.replace(/^\/lab\/(en|zh)/, '').replace(/^\/lab/, '');
 
+            // 解决文章页面有 en 和 zh 目录的问题
+            if (newPath.includes('zh') || newPath.includes('en')) {
+                newPath = newPath.replace(/\/zh\//, `/${lang}/`).replace(/\/en\//, `/${lang}/`);
+            }
+
             // 根据语言添加前缀
             if (lang === 'zh') {
                 newPath = '/zh' + newPath;
@@ -112,14 +117,11 @@
 
             // 检查是否需要重定向到根路径
             if (newPath === '/lab/') {
-                console.log('Redirecting to /');
                 window.location.href = root + `/${lang}/`; // 跳转到首页
             } else {
-                console.log('Redirecting to:', newPath);
                 window.location.href = root + newPath; // 跳转到新的路径
             }
         }
-
 
         // 页面加载后设置语言切换器的样式
         document.addEventListener('DOMContentLoaded', function () {
@@ -147,47 +149,47 @@
         
             <div class="post-item" style="margin-bottom: 20px;">
                 <h2>
-                    <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article1/" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article1/')">Deep Learning-Based Medical Image Diagnosis：From Theory to Practice</a>
+                    <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article1/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article1/')">Deep Learning-Based Medical Image Diagnosis：From Theory to Practice</a>
                 </h2>
                 <p>This article explores the application of deep learning techniques in medical image diagnosis. It begins by introducing the basic concepts and algorithms of deep learning, such as convolutional neural networks (CNNs), then details their practical use in medical image analysis, including tumor detection, organ segmentation, and lesion classification. The article also discusses the challenges of current technology and future developments.</p>
                 <p class="post-date" style="margin-left: -10px;">2024-09-12</p>
-                <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article1/" class="post-detail-link" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article1/')">详细</a>
+                <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article1/" class="post-detail-link" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article1/')">详细</a>
             </div>
         
             <div class="post-item" style="margin-bottom: 20px;">
                 <h2>
-                    <a href="https://xuewenrui.github.io/lab/en/2024/09/18/en/article10/" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/en/2024/09/18/en/article10/')">Data Mining Techniques in Genomics</a>
+                    <a href="https://xuewenrui.github.io/lab/en/2024/09/18/en/article10/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/18/en/article10/')">Data Mining Techniques in Genomics</a>
                 </h2>
                 <p></p>
                 <p class="post-date" style="margin-left: -10px;">2024-09-18</p>
-                <a href="https://xuewenrui.github.io/lab/en/2024/09/18/en/article10/" class="post-detail-link" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/en/2024/09/18/en/article10/')">详细</a>
+                <a href="https://xuewenrui.github.io/lab/en/2024/09/18/en/article10/" class="post-detail-link" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/18/en/article10/')">详细</a>
             </div>
         
             <div class="post-item" style="margin-bottom: 20px;">
                 <h2>
-                    <a href="https://xuewenrui.github.io/lab/en/2024/09/19/en/article11/" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/en/2024/09/19/en/article11/')">Applications of Artificial Intelligence in Medical Data Management</a>
+                    <a href="https://xuewenrui.github.io/lab/en/2024/09/19/en/article11/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/19/en/article11/')">Applications of Artificial Intelligence in Medical Data Management</a>
                 </h2>
                 <p></p>
                 <p class="post-date" style="margin-left: -10px;">2024-09-19</p>
-                <a href="https://xuewenrui.github.io/lab/en/2024/09/19/en/article11/" class="post-detail-link" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/en/2024/09/19/en/article11/')">详细</a>
+                <a href="https://xuewenrui.github.io/lab/en/2024/09/19/en/article11/" class="post-detail-link" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/19/en/article11/')">详细</a>
             </div>
         
             <div class="post-item" style="margin-bottom: 20px;">
                 <h2>
-                    <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article2/" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article2/')">Applications of Artificial Intelligence in Genomics： Decoding the Code of Life</a>
+                    <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article2/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article2/')">Applications of Artificial Intelligence in Genomics： Decoding the Code of Life</a>
                 </h2>
                 <p></p>
                 <p class="post-date" style="margin-left: -10px;">2024-09-12</p>
-                <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article2/" class="post-detail-link" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article2/')">详细</a>
+                <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article2/" class="post-detail-link" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article2/')">详细</a>
             </div>
         
             <div class="post-item" style="margin-bottom: 20px;">
                 <h2>
-                    <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article4/" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article4/')">Integration of Medical Imaging and Genomic Data</a>
+                    <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article4/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article4/')">Integration of Medical Imaging and Genomic Data</a>
                 </h2>
                 <p></p>
                 <p class="post-date" style="margin-left: -10px;">2024-09-12</p>
-                <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article4/" class="post-detail-link" onclick="clearPath(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article4/')">详细</a>
+                <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article4/" class="post-detail-link" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article4/')">详细</a>
             </div>
         
     
@@ -195,7 +197,7 @@
 
 <style>
     .post-detail-link {
-        color: blue;
+        color: #0b6bb7;
         text-decoration: none;
         font-weight: bold;
     }
@@ -205,20 +207,29 @@
 </style>
 
 <script>
-    function clearPath(event, url) {
+    function getCookie(name) {
+        let value = "; " + document.cookie;
+        let parts = value.split("; " + name + "=");
+        if (parts.length === 2) return parts.pop().split(";").shift();
+    }
+   /*!点击能够跳转到相应的文章页面*/
+    function handleLinkClick(event, url) {
         event.preventDefault(); // 阻止默认链接行为
 
-        // 获取 root 路径
+        // 获取当前语言
+        const lang = getCookie('lang') || 'zh';
+
+        // 更新 URL，保持根路径
         const rootPath = '/lab/';
+        const newUrl = url.replace(/\/zh\//, `/${lang}/`).replace(/\/en\//, `/${lang}/`);
 
-        // 清除浏览器 URL 中的路径，保留 root 路径
+        // 更新浏览器路径并重定向
         window.history.pushState(null, null, rootPath);
-
-        // 重定向到实际的文章页面
-        window.location.href = url;
+        window.location.href = newUrl;
     }
-</script>
 
+</script>
+`
     </div>
     <!-- 侧边栏区域 -->
     <div class="sidebars" style="display: flex; flex-direction: column; gap: 20px;"> <!-- 使用 flex-direction: column; 让侧边栏上下排列，并设置间距 -->
