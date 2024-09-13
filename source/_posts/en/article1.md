@@ -1,16 +1,17 @@
 ---
-title: 基于深度学习的医学图像诊断：从理论到实践
+title: Deep Learning-Based Medical Image Diagnosis：From Theory to Practice
 date: 2024-09-12
 layout: post
 lang: en
-excerpt: 这篇文章探讨了深度学习技术在医学图像诊断中的应用。文章首先介绍了深度学习的基本概念和算法，如卷积神经网络（CNN），然后详细说明了其在医学图像分析中的实际应用，包括肿瘤检测、器官分割和病变分类。文章还讨论了当前技术的挑战和未来的发展方向。
+excerpt: This article explores the application of deep learning techniques in medical image diagnosis. It begins by introducing the basic concepts and algorithms of deep learning, such as convolutional neural networks (CNNs), then details their practical use in medical image analysis, including tumor detection, organ segmentation, and lesion classification. The article also discusses the challenges of current technology and future developments.
 ---
-**摘要**:
-这篇文章探讨了深度学习技术在医学图像诊断中的应用。文章首先介绍了深度学习的基本概念和算法，如卷积神经网络（CNN），然后详细说明了其在医学图像分析中的实际应用，包括肿瘤检测、器官分割和病变分类。文章还讨论了当前技术的挑战和未来的发展方向。
 
-**主要内容**:
-- 深度学习的基本原理
-- CNN在医学图像分析中的应用案例
-- 数据预处理和模型训练
-- 技术挑战，如数据集的大小和多样性
-- 未来发展趋势和潜在的技术改进
+**Abstract**:  
+This article explores the application of deep learning techniques in medical image diagnosis. It begins by introducing the basic concepts and algorithms of deep learning, such as convolutional neural networks (CNNs), then details their practical use in medical image analysis, including tumor detection, organ segmentation, and lesion classification. The article also discusses the challenges of current technology and future developments.
+
+**Main Content**:
+- The fundamental principles of deep learning
+- Case studies of CNN applications in medical image analysis
+- Data preprocessing and model training
+- Technical challenges such as the size and diversity of datasets
+- Future trends and potential technical improvements

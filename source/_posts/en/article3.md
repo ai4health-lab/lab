@@ -1,17 +1,16 @@
 ---
-title: 医学图像与基因数据融合：人工智能的新时代
+title: Fusion of Medical Imaging and Genomic Data： The New Era of Artificial Intelligence
 date: 2024-09-12
 layout: post
 lang: en
 ---
 
+**Abstract**:  
+This article explores artificial intelligence methods for integrating medical imaging data with genomic data. It discusses how combining these heterogeneous data sources can enhance disease prediction and personalized medicine accuracy, including technologies and case studies of multimodal data fusion.
 
-**摘要**:
-这篇文章探讨了将医学图像数据与基因组数据结合的人工智能方法。文章介绍了如何通过融合这些异质数据来提高疾病预测和个性化医疗的准确性，包括多模态数据融合的技术和应用案例。
-
-**主要内容**:
-- 医学图像数据与基因数据的融合方法
-- 多模态数据融合的技术背景
-- 实际应用案例，如个性化癌症治疗
-- 数据融合的挑战和解决方案
-- 未来的研究趋势和潜力
+**Main Content**:
+- Methods for integrating medical imaging data with genomic data
+- Technical background of multimodal data fusion
+- Practical case studies, such as personalized cancer treatment
+- Challenges and solutions in data fusion
+- Future research trends and potential

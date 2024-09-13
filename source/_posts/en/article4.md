@@ -1,16 +1,16 @@
 ---
-title: 医学图像与基因数据融合
+title: Integration of Medical Imaging and Genomic Data
 date: 2024-09-12
 layout: post
 lang: en
 ---
 
-**摘要**:
-本文探讨了人工智能在个性化医学中的应用，重点讨论了如何结合基因组数据和医学图像来制定个性化的治疗方案。文章分析了现有技术如何改善疾病预测、治疗选择和预后评估。
+**Abstract**:  
+This article explores the application of artificial intelligence in personalized medicine, focusing on how to combine genomic data with medical imaging to develop personalized treatment plans. It analyzes how existing technologies improve disease prediction, treatment selection, and prognosis assessment.
 
-**主要内容**:
-- 个性化医学的概念和背景
-- 基因组数据与医学图像的结合
-- 个性化治疗方案的设计与实施
-- 案例分析，如个性化肿瘤治疗
-- 挑战和未来的应用前景
+**Main Content**:
+- The concept and background of personalized medicine
+- Integration of genomic data with medical imaging
+- Design and implementation of personalized treatment plans
+- Case studies, such as personalized cancer treatment
+- Challenges and future prospects

@@ -1,16 +1,16 @@
 ---
-title: 基于深度学习的医学图像诊断：从理论到实践
-date: 2024-09-12
+title: Applications of Artificial Intelligence in Medical Data Management
+date: 2024-09-19
 layout: post
 lang: en
-excerpt: 这篇文章探讨了深度学习技术在医学图像诊断中的应用。文章首先介绍了深度学习的基本概念和算法，如卷积神经网络（CNN），然后详细说明了其在医学图像分析中的实际应用，包括肿瘤检测、器官分割和病变分类。文章还讨论了当前技术的挑战和未来的发展方向。
 ---
-**摘要**:
-这篇文章探讨了深度学习技术在医学图像诊断中的应用。文章首先介绍了深度学习的基本概念和算法，如卷积神经网络（CNN），然后详细说明了其在医学图像分析中的实际应用，包括肿瘤检测、器官分割和病变分类。文章还讨论了当前技术的挑战和未来的发展方向。
 
-**主要内容**:
-- 深度学习的基本原理
-- CNN在医学图像分析中的应用案例
-- 数据预处理和模型训练
-- 技术挑战，如数据集的大小和多样性
-- 未来发展趋势和潜在的技术改进
+**Abstract**:  
+This article introduces the application of artificial intelligence in medical data management, particularly in data organization, storage, and analysis. It explores how AI technologies enhance the efficiency and accuracy of medical data processing.
+
+**Main Content**:
+- Role of AI in medical data management
+- Data organization and storage technologies
+- Data analysis and decision support
+- Practical case studies
+- Technical challenges and future application prospects

@@ -1,16 +1,16 @@
 ---
-title: 基于深度学习的医学图像诊断：从理论到实践
-date: 2024-09-12
+title: Applications of Data Science in Public Health
+date: 2024-09-17
 layout: post
 lang: en
-excerpt: 这篇文章探讨了深度学习技术在医学图像诊断中的应用。文章首先介绍了深度学习的基本概念和算法，如卷积神经网络（CNN），然后详细说明了其在医学图像分析中的实际应用，包括肿瘤检测、器官分割和病变分类。文章还讨论了当前技术的挑战和未来的发展方向。
 ---
-**摘要**:
-这篇文章探讨了深度学习技术在医学图像诊断中的应用。文章首先介绍了深度学习的基本概念和算法，如卷积神经网络（CNN），然后详细说明了其在医学图像分析中的实际应用，包括肿瘤检测、器官分割和病变分类。文章还讨论了当前技术的挑战和未来的发展方向。
 
-**主要内容**:
-- 深度学习的基本原理
-- CNN在医学图像分析中的应用案例
-- 数据预处理和模型训练
-- 技术挑战，如数据集的大小和多样性
-- 未来发展趋势和潜在的技术改进
+**Abstract**:  
+This article explores the application of data science in public health, including how data analysis can enhance public health decisions and policy-making. It introduces the role of data science methods in disease surveillance, epidemic prediction, and health policy optimization.
+
+**Main Content**:
+- Role of data science in public health
+- Disease surveillance and epidemic prediction
+- Optimization of health policies
+- Practical case studies
+- Future trends and challenges

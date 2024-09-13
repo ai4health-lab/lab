@@ -1,0 +1,25 @@
+<%
+// 获取当前页面的语言 (lang) 值，默认为 'zh'
+const currentLang = page.lang || 'zh';
+
+// 获取文章，过滤当前语言的文章并显示前5条
+const postsToShow = site.posts.filter(post => post.lang === currentLang).limit(5);
+%>
+
+<div class="post-list">
+    <% if (postsToShow.length > 0) { %>
+        <% postsToShow.forEach(function(post) { %>
+            <div class="post-item" style="position: relative; padding-bottom: 30px;"> <!-- 保证空间放置日期 -->
+                <h2><a href="<%= post.url %>"><%= post.title %></a></h2>
+                <p><%= post.excerpt %></p>
+
+                <!-- 在右下角显示日期 -->
+                <p style="position: absolute; right: 0; bottom: 0; font-size: 12px; color: #888;">
+                    <%= post.date.format('YYYY-MM-DD') %>
+                </p>
+            </div>
+        <% }); %>
+    <% } else { %>
+        <p>没有找到相关的文章。</p>
+    <% } %>
+</div>
