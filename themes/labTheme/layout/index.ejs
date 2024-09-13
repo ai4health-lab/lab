@@ -3,23 +3,58 @@
 const currentLang = page.lang || 'zh';
 
 // 获取文章，过滤当前语言的文章并显示前5条
-const postsToShow = site.posts.filter(post => post.lang === currentLang).limit(5);
+const postsToShow = site.posts.filter(post => post.lang === currentLang).slice(0, 5);
 %>
 
 <div class="post-list">
     <% if (postsToShow.length > 0) { %>
         <% postsToShow.forEach(function(post) { %>
-            <div class="post-item" style="position: relative; padding-bottom: 30px;"> <!-- 保证空间放置日期 -->
-                <h2><a href="<%= post.url %>"><%= post.title %></a></h2>
+            <div class="post-item" style="margin-bottom: 20px;">
+                <h2>
+                    <a href="<%= post.permalink %>" onclick="handleLinkClick(event, '<%= post.permalink %>')"><%= post.title %></a>
+                </h2>
                 <p><%= post.excerpt %></p>
-
-                <!-- 在右下角显示日期 -->
-                <p style="position: absolute; right: 0; bottom: 0; font-size: 12px; color: #888;">
-                    <%= post.date.format('YYYY-MM-DD') %>
-                </p>
+                <p class="post-date" style="margin-left: -10px;"><%= post.date.format('YYYY-MM-DD') %></p>
+                <a href="<%= post.permalink %>" class="post-detail-link" onclick="handleLinkClick(event, '<%= post.permalink %>')">详细</a>
             </div>
         <% }); %>
     <% } else { %>
         <p>没有找到相关的文章。</p>
     <% } %>
 </div>
+
+<style>
+    .post-detail-link {
+        color: #0b6bb7;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .post-detail-link:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<script>
+    function getCookie(name) {
+        let value = "; " + document.cookie;
+        let parts = value.split("; " + name + "=");
+        if (parts.length === 2) return parts.pop().split(";").shift();
+    }
+   /*!点击能够跳转到相应的文章页面*/
+    function handleLinkClick(event, url) {
+        event.preventDefault(); // 阻止默认链接行为
+
+        // 获取当前语言
+        const lang = getCookie('lang') || 'zh';
+
+        // 更新 URL，保持根路径
+        const rootPath = '/lab/';
+        const newUrl = url.replace(/\/zh\//, `/${lang}/`).replace(/\/en\//, `/${lang}/`);
+
+        // 更新浏览器路径并重定向
+        window.history.pushState(null, null, rootPath);
+        window.location.href = newUrl;
+    }
+
+</script>
+`

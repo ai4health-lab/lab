@@ -13,7 +13,8 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://xuewenrui.github.io/lab
+url: https://xuewenrui.github.io/lab  #部署的时候改为这个
+#url: localhost:4000/lab
 permalink: :lang/:year/:month/:day/:title/
 root: /lab/
 permalink_defaults:
