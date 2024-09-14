@@ -170,7 +170,7 @@
 
 
 <!-- 内容区域 -->
-<div class="container" style="display: flex; justify-content: space-between; max-width: 1050px; margin: 0 auto; min-height: 500px">
+<div class="container" style="display: flex; justify-content: space-between; max-width: 1050px; margin: 0 auto; min-height: 800px">
     <!-- 内容区域 -->
     <div class="content" style="flex: 1; padding-right: 1%">
         <article class="post">
@@ -241,23 +241,24 @@
     </div>
     <!-- 侧边栏区域 -->
     <div class="sidebars" style="display: flex; flex-direction: column; gap: 20px;"> <!-- 使用 flex-direction: column; 让侧边栏上下排列，并设置间距 -->
+
          <!-- 默认显示侧边栏，除非明确设置为 false -->
         <!-- 侧边栏 -->
-<div class="sidebar">
+<div class="sidebar1">
     <h3><i class="fas fa-paper-plane"></i> Join Us</h3>
     <a href="/lab/en/join/">PhD and Graduate Applications</a>
 </div>
 
 <style>
-    .sidebar {
+    .sidebar1 {
         width: 250px;
-        height: 120px;
+        min-height: 120px;
         border: 2px solid #418ac8;
         border-radius: 5px;
         background-color: #f9f9f9; /* 背景色 */
     }
 
-    .sidebar h3 {
+    .sidebar1 h3 {
         background-color: #418ac8;
         color: white;
         padding: 10px;
@@ -266,23 +267,72 @@
         border-top-right-radius: 3px;
     }
 
-    .sidebar a {
+    .sidebar1 a {
         display: block;
         text-align: center;
         padding: 10px 0;
         margin: 10px;
         color: #000000;
-        font-size: 16px;
+        font-size: 14px;
         text-decoration: none; /* 移除默认的下划线 */
         border-radius: 5px;
         transition: background-color 0.3s ease;
     }
 
-    .sidebar a:hover {
+    .sidebar1 a:hover {
         background-color: #316ba8; /* 悬停时背景色 */
     }
 
-    .sidebar p {
+    .sidebar1 p {
+        padding: 10px;
+        margin: 0;
+    }
+</style>
+
+        
+
+         <!-- 默认显示侧边栏，除非明确设置为 false -->
+        <!-- 侧边栏 -->
+<div class="sidebar2">
+    <h3><i class="fas fa-list"></i> Common Links</h3>
+    <a href="/lab/en/members/">concat us</a>
+</div>
+
+<style>
+    .sidebar2 {
+        width: 250px;
+        min-height: 120px;
+        border: 2px solid #418ac8;
+        border-radius: 5px;
+        background-color: #f9f9f9; /* 背景色 */
+    }
+
+    .sidebar2 h3 {
+        background-color: #418ac8;
+        color: white;
+        padding: 10px;
+        margin: 0; /* 移除默认的 margin */
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+
+    .sidebar2 a {
+        display: block;
+        text-align: center;
+        padding: 10px 0;
+        margin: 10px;
+        color: #000000;
+        font-size: 14px;
+        text-decoration: none; /* 移除默认的下划线 */
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .sidebar2 a:hover {
+        background-color: #316ba8; /* 悬停时背景色 */
+    }
+
+    .sidebar2 p {
         padding: 10px;
         margin: 0;
     }
@@ -290,52 +340,225 @@
 
         
          <!-- 默认显示侧边栏，除非明确设置为 false -->
-        <!-- 侧边栏 -->
-<div class="sidebar">
-    <h3><i class="fas fa-list"></i> Common Links</h3>
-    <a href="/lab/en/members/">concat us</a>
+        
+<div class="sidebar3">
+    <h3><i class="fas fa-newspaper"></i> news</h3>
+    
+        <ul class="news-list">
+            
+                <li class="news-item">
+                    <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article1/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article1/')"
+                       title="Deep Learning-Based Medical Image Diagnosis：From Theory to Practice">
+                        <span class="news-title">Deep Learn...</span>
+                        <span class="news-date">2024-09-12</span>
+                    </a>
+                </li>
+            
+                <li class="news-item">
+                    <a href="https://xuewenrui.github.io/lab/en/2024/09/18/en/article10/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/18/en/article10/')"
+                       title="Data Mining Techniques in Genomics">
+                        <span class="news-title">Data Minin...</span>
+                        <span class="news-date">2024-09-18</span>
+                    </a>
+                </li>
+            
+                <li class="news-item">
+                    <a href="https://xuewenrui.github.io/lab/en/2024/09/19/en/article11/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/19/en/article11/')"
+                       title="Applications of Artificial Intelligence in Medical Data Management">
+                        <span class="news-title">Applicatio...</span>
+                        <span class="news-date">2024-09-19</span>
+                    </a>
+                </li>
+            
+                <li class="news-item">
+                    <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article2/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article2/')"
+                       title="Applications of Artificial Intelligence in Genomics： Decoding the Code of Life">
+                        <span class="news-title">Applicatio...</span>
+                        <span class="news-date">2024-09-12</span>
+                    </a>
+                </li>
+            
+                <li class="news-item">
+                    <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article3/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article3/')"
+                       title="Fusion of Medical Imaging and Genomic Data： The New Era of Artificial Intelligence">
+                        <span class="news-title">Fusion of ...</span>
+                        <span class="news-date">2024-09-12</span>
+                    </a>
+                </li>
+            
+            
+                <div id="more-content" class="more-content hidden">
+                    
+                        <li class="news-item">
+                            <a href="https://xuewenrui.github.io/lab/en/2024/09/13/en/article5/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/13/en/article5/')"
+                               title="Applications of Artificial Intelligence in Medical Imaging">
+                                <span class="news-title">Applicatio...</span>
+                                <span class="news-date">2024-09-13</span>
+                            </a>
+                        </li>
+                    
+                        <li class="news-item">
+                            <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article4/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article4/')"
+                               title="Integration of Medical Imaging and Genomic Data">
+                                <span class="news-title">Integratio...</span>
+                                <span class="news-date">2024-09-12</span>
+                            </a>
+                        </li>
+                    
+                        <li class="news-item">
+                            <a href="https://xuewenrui.github.io/lab/en/2024/09/14/en/article6/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/14/en/article6/')"
+                               title="Applications of Machine Learning in Genomics">
+                                <span class="news-title">Applicatio...</span>
+                                <span class="news-date">2024-09-14</span>
+                            </a>
+                        </li>
+                    
+                        <li class="news-item">
+                            <a href="https://xuewenrui.github.io/lab/en/2024/09/15/en/article7/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/15/en/article7/')"
+                               title="Application of Interdisciplinary Data Fusion in Medical Research">
+                                <span class="news-title">Applicatio...</span>
+                                <span class="news-date">2024-09-15</span>
+                            </a>
+                        </li>
+                    
+                        <li class="news-item">
+                            <a href="https://xuewenrui.github.io/lab/en/2024/09/16/en/article8/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/16/en/article8/')"
+                               title="Cutting-Edge Applications of Artificial Intelligence in Drug Development">
+                                <span class="news-title">Cutting-Ed...</span>
+                                <span class="news-date">2024-09-16</span>
+                            </a>
+                        </li>
+                    
+                        <li class="news-item">
+                            <a href="https://xuewenrui.github.io/lab/en/2024/09/17/en/article9/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/17/en/article9/')"
+                               title="Applications of Data Science in Public Health">
+                                <span class="news-title">Applicatio...</span>
+                                <span class="news-date">2024-09-17</span>
+                            </a>
+                        </li>
+                    
+                </div>
+                <div class="pagination">
+                    <span class="total-count">total  11  items</span>
+                    <a href="#" class="more-link" onclick="toggleContent(event)">more</a>
+                </div>
+            
+        </ul>
+    
 </div>
-
 <style>
-    .sidebar {
+    .sidebar3 {
         width: 250px;
-        height: 120px;
+        min-height: 120px;
         border: 2px solid #418ac8;
         border-radius: 5px;
         background-color: #f9f9f9; /* 背景色 */
     }
 
-    .sidebar h3 {
+    .sidebar3 h3 {
         background-color: #418ac8;
         color: white;
         padding: 10px;
-        margin: 0; /* 移除默认的 margin */
+        margin: 0;
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
     }
 
-    .sidebar a {
-        display: block;
-        text-align: center;
-        padding: 10px 0;
-        margin: 10px;
-        color: #000000;
-        font-size: 16px;
-        text-decoration: none; /* 移除默认的下划线 */
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-    }
-
-    .sidebar a:hover {
-        background-color: #316ba8; /* 悬停时背景色 */
-    }
-
-    .sidebar p {
-        padding: 10px;
+    .news-list {
+        list-style: none;
+        padding: 0;
         margin: 0;
     }
-</style>
 
+    .news-item {
+        border-bottom: 1px solid #ddd;
+        padding: 10px 10px; /* 减小标题与边框的距离 */
+        display: flex;
+        justify-content: space-between; /* 标题和日期保持同一行 */
+        align-items: center;
+    }
+
+    .news-title {
+        font-size: 14px;
+        color: #000000;
+        margin-right: 10px; /* 控制标题与日期的间距 */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        transition: color 0.3s ease;
+    }
+
+    .news-date {
+        font-size: 12px;
+        color: #666666;
+    }
+
+    .news-item a {
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .news-item a:hover .news-title {
+        color: #0073e6; /* 鼠标悬停时标题字体变为蓝色 */
+    }
+
+    .pagination {
+        padding: 10px;
+        text-align: center;
+        font-size: 14px;
+        color: #000000;
+    }
+
+    .pagination span {
+        display: block;
+    }
+
+    .more-content.hidden {
+        display: none;
+    }
+
+    .more-link {
+        display: block;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+        color: #0073e6;
+        text-decoration: none;
+    }
+
+    .more-link:hover {
+        text-decoration: underline;
+    }
+
+</style>
+<script>
+    function toggleContent(event) {
+        event.preventDefault();
+        const moreContent = document.getElementById('more-content');
+        if (moreContent) {
+            moreContent.classList.toggle('hidden');
+            event.target.textContent = moreContent.classList.contains('hidden') ? 'more' : 'less';
+        }
+    }
+
+    function getCookie(name) {
+        let value = "; " + document.cookie;
+        let parts = value.split("; " + name + "=");
+        if (parts.length === 2) return parts.pop().split(";").shift();
+    }
+
+    function handleLinkClick(event, url) {
+        event.preventDefault();
+        const lang = getCookie('lang') || 'zh';
+        const rootPath = '/lab/';
+        const newUrl = url.replace(/\/zh\//, `/${lang}/`).replace(/\/en\//, `/${lang}/`);
+        window.history.pushState(null, null, rootPath);
+        window.location.href = newUrl;
+    }
+
+</script>
         
     </div>
 </div>
