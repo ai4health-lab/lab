@@ -17,6 +17,7 @@
             <ul>
                 <!-- 获取当前语言 -->
                 <% var lang = currentLang() || config.default_language || 'zh'; %>
+
                 <!-- 解析每个菜单项 -->
                 <% var menuI18n = {
                     home: __('menu.home'),
@@ -37,14 +38,13 @@
 
                 <% Object.keys(menuLinks).forEach(function(key) { %>
                     <li>
-                        <a href="<%= '/lab' + menuLinks[key] %>"
-                           class="<%= '/' + page.path === (menuLinks[key]) ? 'active' : '' %>">
+                        <a href="<%= '/lab' + menuLinks[key] %>">
                             <%= menuI18n[key] || key %> <!-- 动态获取当前语言菜单名 -->
                         </a>
                     </li>
                 <% }); %>
-
             </ul>
+
             <!-- 语言切换滑动栏 -->
             <div class="language-switcher">
                 <div class="switch">
@@ -56,15 +56,9 @@
     </div>
 
     <script>
-        // 设置cookie
-        function setCookie(name, value, days) {
-            var expires = "";
-            if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = "; expires=" + date.toUTCString();
-            }
-            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        // 设置会话cookie（会话期内有效）
+        function setCookie(name, value) {
+            document.cookie = name + "=" + (value || "") + "; path=/";
         }
 
         // 获取cookie
@@ -96,7 +90,7 @@
                 newPath = '/en' + newPath;
             }
 
-            setCookie("lang", lang, 365); // 存储语言设置，过期时间为365天
+            setCookie("lang", lang); // 存储语言设置，默认会话cookie
 
             if (newPath === '/lab/') {
                 window.location.href = root + `/${lang}/`;
@@ -110,7 +104,7 @@
             var lang = getCookie('lang') || '<%= config.default_language || "zh" %>';
             if (!lang) {
                 lang = '<%= config.default_language || "zh" %>';
-                setCookie("lang", lang, 365);
+                setCookie("lang", lang); // 存储语言设置，默认会话cookie
             }
             return lang;
         }
@@ -123,6 +117,27 @@
                     slider.classList.add('active'); // 给选中的语言加上 active 样式
                 } else {
                     slider.classList.remove('active');
+                }
+            });
+
+            // 根据页面路径设置导航栏的活动状态
+            var currentPath = window.location.pathname;
+
+            // 去除 '/lab/' 之前的部分
+            var pathWithoutLab = currentPath.replace(/^\/lab/, '');
+
+            // 定义特殊情况的路径
+            var specialCases = ['/', `/${lang}/`];
+
+            // 根据路径判断活动状态
+            var isHomePage = specialCases.includes(pathWithoutLab);
+
+            document.querySelectorAll('.nav-bar a').forEach(function (link) {
+                var linkHref = link.getAttribute('href').replace(/^\/lab/, '');
+                if (linkHref === pathWithoutLab || (isHomePage && linkHref === `/${lang}/`)) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
                 }
             });
         });

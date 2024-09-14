@@ -14,3 +14,14 @@ join:
 common:
   title: Common Links
   link1: concat us
+
+#首页详情
+home:
+  detail: detail
+  np: No related posts found.
+
+
+#页脚
+footer:
+  description1: © 2024 Digital Life and Intelligent Health Laboratory
+  description2: Address： xxxxxxxxx | Contact： xxxxxxxxxx | Email： xxxx@qq.com

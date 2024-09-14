@@ -10,16 +10,18 @@ const postsToShow = site.posts.filter(post => post.lang === currentLang).slice(0
     <% if (postsToShow.length > 0) { %>
         <% postsToShow.forEach(function(post) { %>
             <div class="post-item" style="margin-bottom: 20px;">
-                <h2>
-                    <a href="<%= post.permalink %>" onclick="handleLinkClick(event, '<%= post.permalink %>')"><%= post.title %></a>
-                </h2>
+                <h3>
+                    <a href="<%= post.permalink %>"
+                       onclick="handleLinkClick(event, '<%= post.permalink %>')"><%= post.title %></a>
+                </h3>
                 <p><%= post.excerpt %></p>
                 <p class="post-date" style="margin-left: -10px;"><%= post.date.format('YYYY-MM-DD') %></p>
-                <a href="<%= post.permalink %>" class="post-detail-link" onclick="handleLinkClick(event, '<%= post.permalink %>')">详细</a>
+                <a href="<%= post.permalink %>" class="post-detail-link"
+                   onclick="handleLinkClick(event, '<%= post.permalink %>')"><%= __('home.detail') %></a>
             </div>
         <% }); %>
     <% } else { %>
-        <p>没有找到相关的文章。</p>
+        <p><%= __('home.np') %><</p>
     <% } %>
 </div>
 
@@ -29,6 +31,7 @@ const postsToShow = site.posts.filter(post => post.lang === currentLang).slice(0
         text-decoration: none;
         font-weight: bold;
     }
+
     .post-detail-link:hover {
         text-decoration: underline;
     }
@@ -40,7 +43,8 @@ const postsToShow = site.posts.filter(post => post.lang === currentLang).slice(0
         let parts = value.split("; " + name + "=");
         if (parts.length === 2) return parts.pop().split(";").shift();
     }
-   /*!点击能够跳转到相应的文章页面*/
+
+    /*!点击能够跳转到相应的文章页面*/
     function handleLinkClick(event, url) {
         event.preventDefault(); // 阻止默认链接行为
 
