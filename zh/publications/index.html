@@ -29,6 +29,7 @@
             <ul>
                 <!-- 获取当前语言 -->
                 
+
                 <!-- 解析每个菜单项 -->
                 
 
@@ -37,42 +38,37 @@
 
                 
                     <li>
-                        <a href="/lab/zh/"
-                           class="">
+                        <a href="/lab/zh/">
                             首页 <!-- 动态获取当前语言菜单名 -->
                         </a>
                     </li>
                 
                     <li>
-                        <a href="/lab/zh/members/"
-                           class="">
+                        <a href="/lab/zh/members/">
                             研究成员 <!-- 动态获取当前语言菜单名 -->
                         </a>
                     </li>
                 
                     <li>
-                        <a href="/lab/zh/research/"
-                           class="">
+                        <a href="/lab/zh/research/">
                             研究方向 <!-- 动态获取当前语言菜单名 -->
                         </a>
                     </li>
                 
                     <li>
-                        <a href="/lab/zh/publications/"
-                           class="">
+                        <a href="/lab/zh/publications/">
                             发表论文 <!-- 动态获取当前语言菜单名 -->
                         </a>
                     </li>
                 
                     <li>
-                        <a href="/lab/zh/tools/"
-                           class="">
+                        <a href="/lab/zh/tools/">
                             软件工具 <!-- 动态获取当前语言菜单名 -->
                         </a>
                     </li>
                 
-
             </ul>
+
             <!-- 语言切换滑动栏 -->
             <div class="language-switcher">
                 <div class="switch">
@@ -84,43 +80,57 @@
     </div>
 
     <script>
-        // 获取当前语言
-        function currentLang() {
-            var lang = document.cookie.replace(/(?:(?:^|.*;\s*)lang\s*\=\s*([^;]*).*$)|^.*$/, "$1") || 'zh,en,default';
-            if (!lang) {
-                lang = 'zh,en,default'; // 从 config.yml 中获取默认语言
-                document.cookie = "lang=" + lang + "; path=/";
-            }
-            return lang;
+        // 设置会话cookie（会话期内有效）
+        function setCookie(name, value) {
+            document.cookie = name + "=" + (value || "") + "; path=/";
         }
 
+        // 获取cookie
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        // 切换语言并设置cookie
         function switchLanguage(lang) {
             var currentPath = window.location.pathname;
             var root = '/lab'; // 根路径
 
-            // 移除当前的语言前缀以及根路径
             var newPath = currentPath.replace(/^\/lab\/(en|zh)/, '').replace(/^\/lab/, '');
 
-            // 解决文章页面有 en 和 zh 目录的问题
             if (newPath.includes('zh') || newPath.includes('en')) {
                 newPath = newPath.replace(/\/zh\//, `/${lang}/`).replace(/\/en\//, `/${lang}/`);
             }
 
-            // 根据语言添加前缀
             if (lang === 'zh') {
                 newPath = '/zh' + newPath;
             } else {
                 newPath = '/en' + newPath;
             }
 
-            document.cookie = "lang=" + lang + "; path=/"; // 存储新的语言设置
+            setCookie("lang", lang); // 存储语言设置，默认会话cookie
 
-            // 检查是否需要重定向到根路径
             if (newPath === '/lab/') {
-                window.location.href = root + `/${lang}/`; // 跳转到首页
+                window.location.href = root + `/${lang}/`;
             } else {
-                window.location.href = root + newPath; // 跳转到新的路径
+                window.location.href = root + newPath;
             }
+        }
+
+        // 获取当前语言并从cookie中读取
+        function currentLang() {
+            var lang = getCookie('lang') || 'zh';
+            if (!lang) {
+                lang = 'zh';
+                setCookie("lang", lang); // 存储语言设置，默认会话cookie
+            }
+            return lang;
         }
 
         // 页面加载后设置语言切换器的样式
@@ -131,6 +141,27 @@
                     slider.classList.add('active'); // 给选中的语言加上 active 样式
                 } else {
                     slider.classList.remove('active');
+                }
+            });
+
+            // 根据页面路径设置导航栏的活动状态
+            var currentPath = window.location.pathname;
+
+            // 去除 '/lab/' 之前的部分
+            var pathWithoutLab = currentPath.replace(/^\/lab/, '');
+
+            // 定义特殊情况的路径
+            var specialCases = ['/', `/${lang}/`];
+
+            // 根据路径判断活动状态
+            var isHomePage = specialCases.includes(pathWithoutLab);
+
+            document.querySelectorAll('.nav-bar a').forEach(function (link) {
+                var linkHref = link.getAttribute('href').replace(/^\/lab/, '');
+                if (linkHref === pathWithoutLab || (isHomePage && linkHref === `/${lang}/`)) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
                 }
             });
         });
@@ -311,8 +342,8 @@
 <footer class="site-footer">
     <div class="footer-content" style="max-width: 1200px; margin: 0 auto; text-align: center; padding: 20px;">
         <!-- 底部信息 -->
-        <p>© 2024 数基生命与智能健康实验室. All rights reserved.</p>
-        <p>地址: xxxxxxxxx | 联系方式: xxxxxxxxxx | 邮箱: xxxx@qq.com</p>
+        <p>© 2024 数基生命与智能健康实验室</p>
+        <p>地址： xxxxxxxxx | 联系方式： xxxxxxxxxx | 邮箱： xxxx@qq.com</p>
     </div>
 </footer>
 

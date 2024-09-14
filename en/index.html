@@ -29,6 +29,7 @@
             <ul>
                 <!-- 获取当前语言 -->
                 
+
                 <!-- 解析每个菜单项 -->
                 
 
@@ -37,42 +38,37 @@
 
                 
                     <li>
-                        <a href="/lab/en/"
-                           class="">
+                        <a href="/lab/en/">
                             home <!-- 动态获取当前语言菜单名 -->
                         </a>
                     </li>
                 
                     <li>
-                        <a href="/lab/en/members/"
-                           class="">
+                        <a href="/lab/en/members/">
                             members <!-- 动态获取当前语言菜单名 -->
                         </a>
                     </li>
                 
                     <li>
-                        <a href="/lab/en/research/"
-                           class="">
+                        <a href="/lab/en/research/">
                             research <!-- 动态获取当前语言菜单名 -->
                         </a>
                     </li>
                 
                     <li>
-                        <a href="/lab/en/publications/"
-                           class="">
+                        <a href="/lab/en/publications/">
                             publications <!-- 动态获取当前语言菜单名 -->
                         </a>
                     </li>
                 
                     <li>
-                        <a href="/lab/en/tools/"
-                           class="">
+                        <a href="/lab/en/tools/">
                             tools <!-- 动态获取当前语言菜单名 -->
                         </a>
                     </li>
                 
-
             </ul>
+
             <!-- 语言切换滑动栏 -->
             <div class="language-switcher">
                 <div class="switch">
@@ -84,43 +80,57 @@
     </div>
 
     <script>
-        // 获取当前语言
-        function currentLang() {
-            var lang = document.cookie.replace(/(?:(?:^|.*;\s*)lang\s*\=\s*([^;]*).*$)|^.*$/, "$1") || 'zh,en,default';
-            if (!lang) {
-                lang = 'zh,en,default'; // 从 config.yml 中获取默认语言
-                document.cookie = "lang=" + lang + "; path=/";
-            }
-            return lang;
+        // 设置会话cookie（会话期内有效）
+        function setCookie(name, value) {
+            document.cookie = name + "=" + (value || "") + "; path=/";
         }
 
+        // 获取cookie
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        // 切换语言并设置cookie
         function switchLanguage(lang) {
             var currentPath = window.location.pathname;
             var root = '/lab'; // 根路径
 
-            // 移除当前的语言前缀以及根路径
             var newPath = currentPath.replace(/^\/lab\/(en|zh)/, '').replace(/^\/lab/, '');
 
-            // 解决文章页面有 en 和 zh 目录的问题
             if (newPath.includes('zh') || newPath.includes('en')) {
                 newPath = newPath.replace(/\/zh\//, `/${lang}/`).replace(/\/en\//, `/${lang}/`);
             }
 
-            // 根据语言添加前缀
             if (lang === 'zh') {
                 newPath = '/zh' + newPath;
             } else {
                 newPath = '/en' + newPath;
             }
 
-            document.cookie = "lang=" + lang + "; path=/"; // 存储新的语言设置
+            setCookie("lang", lang); // 存储语言设置，默认会话cookie
 
-            // 检查是否需要重定向到根路径
             if (newPath === '/lab/') {
-                window.location.href = root + `/${lang}/`; // 跳转到首页
+                window.location.href = root + `/${lang}/`;
             } else {
-                window.location.href = root + newPath; // 跳转到新的路径
+                window.location.href = root + newPath;
             }
+        }
+
+        // 获取当前语言并从cookie中读取
+        function currentLang() {
+            var lang = getCookie('lang') || 'zh';
+            if (!lang) {
+                lang = 'zh';
+                setCookie("lang", lang); // 存储语言设置，默认会话cookie
+            }
+            return lang;
         }
 
         // 页面加载后设置语言切换器的样式
@@ -131,6 +141,27 @@
                     slider.classList.add('active'); // 给选中的语言加上 active 样式
                 } else {
                     slider.classList.remove('active');
+                }
+            });
+
+            // 根据页面路径设置导航栏的活动状态
+            var currentPath = window.location.pathname;
+
+            // 去除 '/lab/' 之前的部分
+            var pathWithoutLab = currentPath.replace(/^\/lab/, '');
+
+            // 定义特殊情况的路径
+            var specialCases = ['/', `/${lang}/`];
+
+            // 根据路径判断活动状态
+            var isHomePage = specialCases.includes(pathWithoutLab);
+
+            document.querySelectorAll('.nav-bar a').forEach(function (link) {
+                var linkHref = link.getAttribute('href').replace(/^\/lab/, '');
+                if (linkHref === pathWithoutLab || (isHomePage && linkHref === `/${lang}/`)) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
                 }
             });
         });
@@ -148,48 +179,58 @@
     
         
             <div class="post-item" style="margin-bottom: 20px;">
-                <h2>
-                    <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article1/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article1/')">Deep Learning-Based Medical Image Diagnosis：From Theory to Practice</a>
-                </h2>
+                <h3>
+                    <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article1/"
+                       onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article1/')">Deep Learning-Based Medical Image Diagnosis：From Theory to Practice</a>
+                </h3>
                 <p>This article explores the application of deep learning techniques in medical image diagnosis. It begins by introducing the basic concepts and algorithms of deep learning, such as convolutional neural networks (CNNs), then details their practical use in medical image analysis, including tumor detection, organ segmentation, and lesion classification. The article also discusses the challenges of current technology and future developments.</p>
                 <p class="post-date" style="margin-left: -10px;">2024-09-12</p>
-                <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article1/" class="post-detail-link" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article1/')">详细</a>
+                <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article1/" class="post-detail-link"
+                   onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article1/')">detail</a>
             </div>
         
             <div class="post-item" style="margin-bottom: 20px;">
-                <h2>
-                    <a href="https://xuewenrui.github.io/lab/en/2024/09/18/en/article10/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/18/en/article10/')">Data Mining Techniques in Genomics</a>
-                </h2>
+                <h3>
+                    <a href="https://xuewenrui.github.io/lab/en/2024/09/18/en/article10/"
+                       onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/18/en/article10/')">Data Mining Techniques in Genomics</a>
+                </h3>
                 <p></p>
                 <p class="post-date" style="margin-left: -10px;">2024-09-18</p>
-                <a href="https://xuewenrui.github.io/lab/en/2024/09/18/en/article10/" class="post-detail-link" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/18/en/article10/')">详细</a>
+                <a href="https://xuewenrui.github.io/lab/en/2024/09/18/en/article10/" class="post-detail-link"
+                   onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/18/en/article10/')">detail</a>
             </div>
         
             <div class="post-item" style="margin-bottom: 20px;">
-                <h2>
-                    <a href="https://xuewenrui.github.io/lab/en/2024/09/19/en/article11/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/19/en/article11/')">Applications of Artificial Intelligence in Medical Data Management</a>
-                </h2>
+                <h3>
+                    <a href="https://xuewenrui.github.io/lab/en/2024/09/19/en/article11/"
+                       onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/19/en/article11/')">Applications of Artificial Intelligence in Medical Data Management</a>
+                </h3>
                 <p></p>
                 <p class="post-date" style="margin-left: -10px;">2024-09-19</p>
-                <a href="https://xuewenrui.github.io/lab/en/2024/09/19/en/article11/" class="post-detail-link" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/19/en/article11/')">详细</a>
+                <a href="https://xuewenrui.github.io/lab/en/2024/09/19/en/article11/" class="post-detail-link"
+                   onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/19/en/article11/')">detail</a>
             </div>
         
             <div class="post-item" style="margin-bottom: 20px;">
-                <h2>
-                    <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article2/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article2/')">Applications of Artificial Intelligence in Genomics： Decoding the Code of Life</a>
-                </h2>
+                <h3>
+                    <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article2/"
+                       onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article2/')">Applications of Artificial Intelligence in Genomics： Decoding the Code of Life</a>
+                </h3>
                 <p></p>
                 <p class="post-date" style="margin-left: -10px;">2024-09-12</p>
-                <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article2/" class="post-detail-link" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article2/')">详细</a>
+                <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article2/" class="post-detail-link"
+                   onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article2/')">detail</a>
             </div>
         
             <div class="post-item" style="margin-bottom: 20px;">
-                <h2>
-                    <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article3/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article3/')">Fusion of Medical Imaging and Genomic Data： The New Era of Artificial Intelligence</a>
-                </h2>
+                <h3>
+                    <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article3/"
+                       onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article3/')">Fusion of Medical Imaging and Genomic Data： The New Era of Artificial Intelligence</a>
+                </h3>
                 <p></p>
                 <p class="post-date" style="margin-left: -10px;">2024-09-12</p>
-                <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article3/" class="post-detail-link" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article3/')">详细</a>
+                <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article3/" class="post-detail-link"
+                   onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article3/')">detail</a>
             </div>
         
     
@@ -201,6 +242,7 @@
         text-decoration: none;
         font-weight: bold;
     }
+
     .post-detail-link:hover {
         text-decoration: underline;
     }
@@ -212,7 +254,8 @@
         let parts = value.split("; " + name + "=");
         if (parts.length === 2) return parts.pop().split(";").shift();
     }
-   /*!点击能够跳转到相应的文章页面*/
+
+    /*!点击能够跳转到相应的文章页面*/
     function handleLinkClick(event, url) {
         event.preventDefault(); // 阻止默认链接行为
 
@@ -335,8 +378,8 @@
 <footer class="site-footer">
     <div class="footer-content" style="max-width: 1200px; margin: 0 auto; text-align: center; padding: 20px;">
         <!-- 底部信息 -->
-        <p>© 2024 数基生命与智能健康实验室. All rights reserved.</p>
-        <p>地址: xxxxxxxxx | 联系方式: xxxxxxxxxx | 邮箱: xxxx@qq.com</p>
+        <p>© 2024 Digital Life and Intelligent Health Laboratory</p>
+        <p>Address： xxxxxxxxx | Contact： xxxxxxxxxx | Email： xxxx@qq.com</p>
     </div>
 </footer>
 
