@@ -13,18 +13,23 @@
 <%- partial('header') %>
 
 <!-- 内容区域 -->
-<div class="container" style="display: flex; justify-content: space-between; max-width: 1050px; margin: 0 auto; min-height: 500px">
+<div class="container" style="display: flex; justify-content: space-between; max-width: 1050px; margin: 0 auto; min-height: 800px">
     <!-- 内容区域 -->
     <div class="content" style="flex: 1; padding-right: 1%">
         <%- body %>
     </div>
     <!-- 侧边栏区域 -->
     <div class="sidebars" style="display: flex; flex-direction: column; gap: 20px;"> <!-- 使用 flex-direction: column; 让侧边栏上下排列，并设置间距 -->
+
         <% if (typeof page.sidebar1 === 'undefined' || page.sidebar1 === true) { %> <!-- 默认显示侧边栏，除非明确设置为 false -->
         <%- partial('sidebar1') %>
         <% } %>
+
         <% if (typeof page.sidebar2 === 'undefined' || page.sidebar2 === true) { %> <!-- 默认显示侧边栏，除非明确设置为 false -->
         <%- partial('sidebar2') %>
+        <% } %>
+        <% if (typeof page.sidebar3 === 'undefined' || page.sidebar3 === true) { %> <!-- 默认显示侧边栏，除非明确设置为 false -->
+        <%- partial('sidebar3') %>
         <% } %>
     </div>
 </div>

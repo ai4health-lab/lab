@@ -25,3 +25,13 @@ home:
 footer:
   description1: © 2024 Digital Life and Intelligent Health Laboratory
   description2: Address： xxxxxxxxx | Contact： xxxxxxxxxx | Email： xxxx@qq.com
+
+
+#新闻动态
+notice:
+  title: news
+  total: "total  "
+  item: "  items"
+  none: no news
+  more: more
+  less: less

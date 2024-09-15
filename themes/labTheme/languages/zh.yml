@@ -25,3 +25,13 @@ home:
 footer:
   description1: © 2024 数基生命与智能健康实验室
   description2: 地址： xxxxxxxxx | 联系方式： xxxxxxxxxx | 邮箱： xxxx@qq.com
+
+
+#新闻动态
+notice:
+  title: 新闻动态
+  total: 总共
+  item: 条
+  none: 没有新闻动态
+  more: 更多
+  less: 更少

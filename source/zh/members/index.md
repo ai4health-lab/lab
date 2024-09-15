@@ -4,6 +4,7 @@ lang: zh
 layout: post
 sidebar1: false
 sidebar2: false
+sidebar3: false
 showDate: false
 ---
 
