@@ -58,7 +58,7 @@
 
 .nav-bar ul li a {
     color: white;
-    padding: 10px 45px; /* 调整左右内边距，使得样式好看*/
+    padding: 10px 45px;
     text-decoration: none;
     display: inline-block;
     position: relative; /* 为了让底部横线相对于链接定位 */
@@ -284,11 +284,11 @@
     }
 
     .footer-content {
-        padding: 0 10px; /* 减少内边距适应小屏幕 */
+        padding: 0 10px;
     }
 
     .site-footer p {
-        font-size: 0.85em; /* 调整字体大小以适应小屏幕 */
+        font-size: 0.85em;
     }
 
     .footer-social-links a {

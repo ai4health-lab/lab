@@ -39,13 +39,13 @@
                 <% Object.keys(menuLinks).forEach(function(key) { %>
                     <li>
                         <a href="<%= '/lab' + menuLinks[key] %>">
-                            <%= menuI18n[key] || key %> <!-- 动态获取当前语言菜单名 -->
+                            <%= menuI18n[key] || key %>
                         </a>
                     </li>
                 <% }); %>
             </ul>
 
-            <!-- 语言切换滑动栏 -->
+            <!-- 中英文切换滑动栏 -->
             <div class="language-switcher">
                 <div class="switch">
                     <div class="slider" data-lang="zh" onclick="switchLanguage('zh')">中文</div>
@@ -56,7 +56,7 @@
     </div>
 
     <script>
-        // 设置会话cookie（会话期内有效）
+        // 设置cookie
         function setCookie(name, value) {
             document.cookie = name + "=" + (value || "") + "; path=/";
         }
@@ -104,17 +104,17 @@
             var lang = getCookie('lang') || '<%= config.default_language || "zh" %>';
             if (!lang) {
                 lang = '<%= config.default_language || "zh" %>';
-                setCookie("lang", lang); // 存储语言设置，默认会话cookie
+                setCookie("lang", lang); // 存储语言
             }
             return lang;
         }
 
-        // 页面加载后设置语言切换器的样式
+        // 语言切换器的样式
         document.addEventListener('DOMContentLoaded', function () {
             var lang = currentLang();
             document.querySelectorAll('.switch .slider').forEach(function (slider) {
                 if (slider.getAttribute('data-lang') === lang) {
-                    slider.classList.add('active'); // 给选中的语言加上 active 样式
+                    slider.classList.add('active'); // 选中的语言设置样式
                 } else {
                     slider.classList.remove('active');
                 }
