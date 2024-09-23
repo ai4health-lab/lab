@@ -9,13 +9,76 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body>
-<!-- 引用 header.ejs -->
-<header class="site-header">
+<logo class="logo">
+    <div class="lab_logo">
+        <img src="/lab/images/logo.png" alt="实验室logo">
+    </div>
     <!-- 实验室名称 -->
     <div class="lab-name">
         <h1>数基生命与智能健康实验室</h1>
         <h2>Digital Life and Intelligent Health Laboratory</h2>
     </div>
+</logo>
+<style>
+    /* 设置 logo 容器居中，并限定最大宽度为 1050px */
+    .logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1050px;
+        margin: 0 auto; /* 居中 */
+        padding: 20px 0;
+    }
+
+    /* 实验室图标靠左， */
+    .lab_logo img {
+        max-height: 100px; /* 调整 logo 尺寸 */
+    }
+
+    /* 实验室名称保持左对齐 */
+    .lab-name {
+        text-align: left; /* 左对齐 */
+    }
+
+    .lab-name h1 {
+        font-size: 2.5em;
+        margin: 0;
+        font-weight: bold;
+    }
+
+    .lab-name h2 {
+        font-size: 1.5em;
+        margin: 5px 0;
+    }
+
+    /* 手机端适配 - 屏幕宽度小于768px时生效 */
+    @media only screen and (max-width: 768px) {
+        .logo {
+            flex-direction: column; /* 垂直堆叠 logo 和名称 */
+            align-items: center; /* 在垂直方向居中对齐 */
+        }
+
+        .lab_logo img {
+            max-height: 80px; /* 在手机端稍微缩小 logo 尺寸 */
+            margin-bottom: 10px; /* 添加底部间距，分隔 logo 和名称 */
+        }
+
+        .lab-name {
+            text-align: center; /* 手机端居中对齐实验室名称 */
+        }
+
+        .lab-name h1 {
+            font-size: 2em; /* 调整标题字体大小 */
+        }
+
+        .lab-name h2 {
+            font-size: 1.2em; /* 调整副标题字体大小 */
+        }
+    }
+</style>
+<!-- 引用 header.ejs -->
+<header class="site-header">
 
     <!-- Banner 图片 -->
     <div class="banner">
@@ -39,37 +102,37 @@
                 
                     <li>
                         <a href="/lab/zh/">
-                            首页 <!-- 动态获取当前语言菜单名 -->
+                            首页
                         </a>
                     </li>
                 
                     <li>
                         <a href="/lab/zh/members/">
-                            研究成员 <!-- 动态获取当前语言菜单名 -->
+                            研究成员
                         </a>
                     </li>
                 
                     <li>
                         <a href="/lab/zh/research/">
-                            研究方向 <!-- 动态获取当前语言菜单名 -->
+                            研究方向
                         </a>
                     </li>
                 
                     <li>
                         <a href="/lab/zh/publications/">
-                            发表论文 <!-- 动态获取当前语言菜单名 -->
+                            发表论文
                         </a>
                     </li>
                 
                     <li>
                         <a href="/lab/zh/tools/">
-                            软件工具 <!-- 动态获取当前语言菜单名 -->
+                            软件工具
                         </a>
                     </li>
                 
             </ul>
 
-            <!-- 语言切换滑动栏 -->
+            <!-- 中英文切换滑动栏 -->
             <div class="language-switcher">
                 <div class="switch">
                     <div class="slider" data-lang="zh" onclick="switchLanguage('zh')">中文</div>
@@ -80,7 +143,7 @@
     </div>
 
     <script>
-        // 设置会话cookie（会话期内有效）
+        // 设置cookie
         function setCookie(name, value) {
             document.cookie = name + "=" + (value || "") + "; path=/";
         }
@@ -128,17 +191,17 @@
             var lang = getCookie('lang') || 'zh';
             if (!lang) {
                 lang = 'zh';
-                setCookie("lang", lang); // 存储语言设置，默认会话cookie
+                setCookie("lang", lang); // 存储语言
             }
             return lang;
         }
 
-        // 页面加载后设置语言切换器的样式
+        // 语言切换器的样式
         document.addEventListener('DOMContentLoaded', function () {
             var lang = currentLang();
             document.querySelectorAll('.switch .slider').forEach(function (slider) {
                 if (slider.getAttribute('data-lang') === lang) {
-                    slider.classList.add('active'); // 给选中的语言加上 active 样式
+                    slider.classList.add('active'); // 选中的语言设置样式
                 } else {
                     slider.classList.remove('active');
                 }
@@ -170,7 +233,8 @@
 
 
 <!-- 内容区域 -->
-<div class="container" style="display: flex; justify-content: space-between; max-width: 1050px; margin: 0 auto; min-height: 800px">
+<div class="container"
+     style="display: flex; justify-content: space-between; max-width: 1050px; margin: 0 auto; min-height: 800px">
     <!-- 内容区域 -->
     <div class="content" style="flex: 1; padding-right: 1%">
         <article class="post">
@@ -188,7 +252,7 @@
 
 <style>
     .post {
-        border: 2px solid #418ac8; /* 蓝色边框 */
+        border: 2px solid #ce0b0b;
         border-radius: 5px;
         margin: 3px auto;
         max-width: 1050px;
@@ -203,7 +267,7 @@
     }
 
     .post-title {
-        background-color: #418ac8; /* 蓝色背景 */
+        background-color: #ce0b0b; /* 蓝色背景 */
         height: 22px;
         color: white;
         padding: 10px; /* 内边距，确保文本不会紧贴边缘 */
@@ -212,7 +276,7 @@
         border-top-right-radius: 5px;
         position: relative;
         z-index: 1; /* 确保标题在内容之上 */
-        box-shadow: 0 0 0 2px #418ac8; /* 确保左边框和上边框的颜色 */
+        box-shadow: 0 0 0 2px #ce0b0b; /* 确保左边框和上边框的颜色 */
         margin: -2px 0 0 -2px; /* 确保背景色紧挨左边框和上边框 */
     }
 
@@ -230,17 +294,49 @@
         padding: 5px 10px;
         border-radius: 3px;
     }
-
-
     .post-content {
         padding: 20px;
         line-height: 1.6;
     }
+
+    @media only screen and (max-width: 768px) {
+        .post {
+            max-width: 100%; /* 占据手机屏幕的宽度 */
+            min-height: auto; /* 移除固定高度 */
+            margin: 3px 5px; /* 减少边距 */
+        }
+
+        .post-title {
+            font-size: 16px; /* 缩小标题字体 */
+            padding: 8px; /* 调整内边距 */
+            height: auto; /* 确保标题高度自适应 */
+            box-shadow: none; /* 去除不必要的阴影 */
+        }
+
+        .post-title h3 {
+            font-size: 1.2em; /* 缩小标题字体 */
+        }
+
+        .post-content {
+            padding: 10px; /* 减少内容的内边距 */
+            font-size: 1em; /* 调整内容字体大小 */
+            line-height: 1.4; /* 减小行高 */
+        }
+
+        .post-date {
+            font-size: 0.8em; /* 缩小日期字体 */
+            padding: 3px 5px; /* 缩小日期的内边距 */
+            right: 5px; /* 调整日期位置 */
+            bottom: 5px;
+        }
+    }
+
 </style>
 
     </div>
     <!-- 侧边栏区域 -->
-    <div class="sidebars" style="display: flex; flex-direction: column; gap: 20px;"> <!-- 使用 flex-direction: column; 让侧边栏上下排列，并设置间距 -->
+    <div class="sidebars" style="display: flex; flex-direction: column; gap: 20px;">
+        <!-- 使用 flex-direction: column; 让侧边栏上下排列，并设置间距 -->
 
          <!-- 默认显示侧边栏，除非明确设置为 false -->
         <!-- 侧边栏 -->
@@ -253,13 +349,13 @@
     .sidebar1 {
         width: 250px;
         min-height: 120px;
-        border: 2px solid #418ac8;
+        border: 2px solid #ce0b0b;
         border-radius: 5px;
         background-color: #f9f9f9; /* 背景色 */
     }
 
     .sidebar1 h3 {
-        background-color: #418ac8;
+        background-color: #ce0b0b;
         color: white;
         padding: 10px;
         margin: 0; /* 移除默认的 margin */
@@ -280,19 +376,41 @@
     }
 
     .sidebar1 a:hover {
-        background-color: #316ba8; /* 悬停时背景色 */
+        color: #0073e6; /* 鼠标悬停时标题字体变为蓝色 */
     }
 
     .sidebar1 p {
         padding: 10px;
         margin: 0;
     }
+    @media only screen and (max-width: 768px) {
+        .sidebar1 {
+            width: 100%; /* 在手机端占满宽度 */
+            margin-bottom: 20px; /* 增加底部间距 */
+        }
+
+        .sidebar1 h3 {
+            font-size: 1.2em; /* 调整标题大小 */
+            padding: 8px; /* 减少内边距 */
+        }
+
+        .sidebar1 a {
+            font-size: 1em; /* 调整链接的字体大小 */
+            padding: 8px; /* 减少内边距 */
+            margin: 5px; /* 减少链接的外边距 */
+        }
+
+        .sidebar1 p {
+            font-size: 1em; /* 调整段落的字体大小 */
+            padding: 8px; /* 减少内边距 */
+        }
+    }
 </style>
 
         
 
          <!-- 默认显示侧边栏，除非明确设置为 false -->
-        <!-- 侧边栏 -->
+        <!-- !侧边栏 -->
 <div class="sidebar2">
     <h3><i class="fas fa-list"></i> 常用链接</h3>
     <a href="/lab/zh/members/">联系我们</a>
@@ -302,13 +420,13 @@
     .sidebar2 {
         width: 250px;
         min-height: 120px;
-        border: 2px solid #418ac8;
+        border: 2px solid #ce0b0b;
         border-radius: 5px;
         background-color: #f9f9f9; /* 背景色 */
     }
 
     .sidebar2 h3 {
-        background-color: #418ac8;
+        background-color: #ce0b0b;
         color: white;
         padding: 10px;
         margin: 0; /* 移除默认的 margin */
@@ -329,12 +447,36 @@
     }
 
     .sidebar2 a:hover {
-        background-color: #316ba8; /* 悬停时背景色 */
+        color: #0073e6; /* 鼠标悬停时标题字体变为蓝色 */
     }
 
     .sidebar2 p {
         padding: 10px;
         margin: 0;
+    }
+
+    /* 手机端样式调整 */
+    @media only screen and (max-width: 768px) {
+        .sidebar2 {
+            width: 100%; /* 在手机端占满宽度 */
+            margin-bottom: 20px; /* 增加底部间距 */
+        }
+
+        .sidebar2 h3 {
+            font-size: 1.2em; /* 调整标题大小 */
+            padding: 8px; /* 减少内边距 */
+        }
+
+        .sidebar2 a {
+            font-size: 1em; /* 调整链接的字体大小 */
+            padding: 8px; /* 减少内边距 */
+            margin: 5px; /* 减少链接的外边距 */
+        }
+
+        .sidebar2 p {
+            font-size: 1em; /* 调整段落的字体大小 */
+            padding: 8px; /* 减少内边距 */
+        }
     }
 </style>
 
@@ -347,7 +489,7 @@
         <ul class="news-list">
             
                 <li class="news-item">
-                    <a href="https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article1/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article1/')"
+                    <a href="zh/2024/09/12/zh/article1/" onclick="handleLinkClick(event, 'zh/2024/09/12/zh/article1/')"
                        title="基于深度学习的医学图像诊断：从理论到实践">
                         <span class="news-title">基于深度学习的医学图...</span>
                         <span class="news-date">2024-09-12</span>
@@ -355,7 +497,7 @@
                 </li>
             
                 <li class="news-item">
-                    <a href="https://xuewenrui.github.io/lab/zh/2024/09/18/zh/article10/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/zh/2024/09/18/zh/article10/')"
+                    <a href="zh/2024/09/18/zh/article10/" onclick="handleLinkClick(event, 'zh/2024/09/18/zh/article10/')"
                        title="基因组学中的数据挖掘技术">
                         <span class="news-title">基因组学中的数据挖掘...</span>
                         <span class="news-date">2024-09-18</span>
@@ -363,7 +505,7 @@
                 </li>
             
                 <li class="news-item">
-                    <a href="https://xuewenrui.github.io/lab/zh/2024/09/19/zh/article11/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/zh/2024/09/19/zh/article11/')"
+                    <a href="zh/2024/09/19/zh/article11/" onclick="handleLinkClick(event, 'zh/2024/09/19/zh/article11/')"
                        title="人工智能在医疗数据管理中的应用">
                         <span class="news-title">人工智能在医疗数据管...</span>
                         <span class="news-date">2024-09-19</span>
@@ -371,18 +513,18 @@
                 </li>
             
                 <li class="news-item">
-                    <a href="https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article2/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article2/')"
-                       title="人工智能在基因组学中的应用：解码生命的密码">
-                        <span class="news-title">人工智能在基因组学中...</span>
+                    <a href="zh/2024/09/12/zh/article3/" onclick="handleLinkClick(event, 'zh/2024/09/12/zh/article3/')"
+                       title="医学图像与基因数据融合：人工智能的新时代">
+                        <span class="news-title">医学图像与基因数据融...</span>
                         <span class="news-date">2024-09-12</span>
                     </a>
                 </li>
             
                 <li class="news-item">
-                    <a href="https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article3/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article3/')"
-                       title="医学图像与基因数据融合：人工智能的新时代">
-                        <span class="news-title">医学图像与基因数据融...</span>
-                        <span class="news-date">2024-09-12</span>
+                    <a href="zh/2024/09/13/zh/article5/" onclick="handleLinkClick(event, 'zh/2024/09/13/zh/article5/')"
+                       title="人工智能在医学影像中的应用">
+                        <span class="news-title">人工智能在医学影像中...</span>
+                        <span class="news-date">2024-09-13</span>
                     </a>
                 </li>
             
@@ -390,7 +532,15 @@
                 <div id="more-content" class="more-content hidden">
                     
                         <li class="news-item">
-                            <a href="https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article4/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article4/')"
+                            <a href="zh/2024/09/12/zh/article2/" onclick="handleLinkClick(event, 'zh/2024/09/12/zh/article2/')"
+                               title="人工智能在基因组学中的应用：解码生命的密码">
+                                <span class="news-title">人工智能在基因组学中...</span>
+                                <span class="news-date">2024-09-12</span>
+                            </a>
+                        </li>
+                    
+                        <li class="news-item">
+                            <a href="zh/2024/09/12/zh/article4/" onclick="handleLinkClick(event, 'zh/2024/09/12/zh/article4/')"
                                title="医学图像与基因数据融合：人工智能的新时代">
                                 <span class="news-title">医学图像与基因数据融...</span>
                                 <span class="news-date">2024-09-12</span>
@@ -398,15 +548,7 @@
                         </li>
                     
                         <li class="news-item">
-                            <a href="https://xuewenrui.github.io/lab/zh/2024/09/13/zh/article5/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/zh/2024/09/13/zh/article5/')"
-                               title="人工智能在医学影像中的应用">
-                                <span class="news-title">人工智能在医学影像中...</span>
-                                <span class="news-date">2024-09-13</span>
-                            </a>
-                        </li>
-                    
-                        <li class="news-item">
-                            <a href="https://xuewenrui.github.io/lab/zh/2024/09/14/zh/article6/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/zh/2024/09/14/zh/article6/')"
+                            <a href="zh/2024/09/14/zh/article6/" onclick="handleLinkClick(event, 'zh/2024/09/14/zh/article6/')"
                                title="基因组学中的机器学习应用">
                                 <span class="news-title">基因组学中的机器学习...</span>
                                 <span class="news-date">2024-09-14</span>
@@ -414,7 +556,15 @@
                         </li>
                     
                         <li class="news-item">
-                            <a href="https://xuewenrui.github.io/lab/zh/2024/09/17/zh/article9/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/zh/2024/09/17/zh/article9/')"
+                            <a href="zh/2024/09/15/zh/article7/" onclick="handleLinkClick(event, 'zh/2024/09/15/zh/article7/')"
+                               title="跨学科数据融合在医学研究中的应用">
+                                <span class="news-title">跨学科数据融合在医学...</span>
+                                <span class="news-date">2024-09-15</span>
+                            </a>
+                        </li>
+                    
+                        <li class="news-item">
+                            <a href="zh/2024/09/17/zh/article9/" onclick="handleLinkClick(event, 'zh/2024/09/17/zh/article9/')"
                                title="数据科学在公共卫生领域的应用">
                                 <span class="news-title">数据科学在公共卫生领...</span>
                                 <span class="news-date">2024-09-17</span>
@@ -422,18 +572,10 @@
                         </li>
                     
                         <li class="news-item">
-                            <a href="https://xuewenrui.github.io/lab/zh/2024/09/16/zh/article8/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/zh/2024/09/16/zh/article8/')"
+                            <a href="zh/2024/09/16/zh/article8/" onclick="handleLinkClick(event, 'zh/2024/09/16/zh/article8/')"
                                title="人工智能在药物研发中的前沿应用">
                                 <span class="news-title">人工智能在药物研发中...</span>
                                 <span class="news-date">2024-09-16</span>
-                            </a>
-                        </li>
-                    
-                        <li class="news-item">
-                            <a href="https://xuewenrui.github.io/lab/zh/2024/09/15/zh/article7/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/zh/2024/09/15/zh/article7/')"
-                               title="跨学科数据融合在医学研究中的应用">
-                                <span class="news-title">跨学科数据融合在医学...</span>
-                                <span class="news-date">2024-09-15</span>
                             </a>
                         </li>
                     
@@ -450,13 +592,13 @@
     .sidebar3 {
         width: 250px;
         min-height: 120px;
-        border: 2px solid #418ac8;
+        border: 2px solid #ce0b0b;
         border-radius: 5px;
         background-color: #f9f9f9; /* 背景色 */
     }
 
     .sidebar3 h3 {
-        background-color: #418ac8;
+        background-color: #ce0b0b;
         color: white;
         padding: 10px;
         margin: 0;
@@ -472,7 +614,7 @@
 
     .news-item {
         border-bottom: 1px solid #ddd;
-        padding: 10px 10px; /* 减小标题与边框的距离 */
+        padding: 10px 10px;
         display: flex;
         justify-content: space-between; /* 标题和日期保持同一行 */
         align-items: center;
@@ -524,14 +666,37 @@
         text-align: center;
         padding: 10px;
         font-size: 14px;
-        color: #0073e6;
+        color: #007bff;
+        font-weight: bold;
         text-decoration: none;
     }
 
     .more-link:hover {
         text-decoration: underline;
     }
+    /* 手机端样式调整 */
+    @media only screen and (max-width: 768px) {
+        .sidebar3 {
+            width: 100%; /* 在手机端占满宽度 */
+            margin-bottom: 20px; /* 增加底部间距 */
+        }
 
+        .news-title {
+            font-size: 1em; /* 调整标题的字体大小 */
+        }
+
+        .news-date {
+            font-size: 0.9em; /* 调整日期的字体大小 */
+        }
+
+        .pagination {
+            font-size: 1em; /* 调整分页按钮的字体大小 */
+        }
+
+        .more-link {
+            font-size: 1em; /* 调整 "更多" 链接的字体大小 */
+        }
+    }
 </style>
 <script>
     function toggleContent(event) {
@@ -565,7 +730,7 @@
 <!-- 引用 footer.ejs -->
 <footer class="site-footer">
     <div class="footer-content" style="max-width: 1200px; margin: 0 auto; text-align: center; padding: 20px;">
-        <!-- 底部信息 -->
+        <!-- ?页脚内容 -->
         <p>© 2024 数基生命与智能健康实验室</p>
         <p>地址： xxxxxxxxx | 联系方式： xxxxxxxxxx | 邮箱： xxxx@qq.com</p>
     </div>
@@ -584,6 +749,5 @@
     // 获取语言设置
     var lang = getCookie('lang') || 'zh'; // 默认使用 'zh'
 </script>
-
 </body>
 </html>

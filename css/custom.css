@@ -1,5 +1,4 @@
 /* header.ejs */
-
 /* 设置头部宽度为1050px并居中 */
 .site-header {
     width: 100%;
@@ -33,7 +32,7 @@
 
 /* 导航栏样式 */
 .nav-bar {
-    background-color: #418ac8;
+    background-color: #b90019;
     padding: 10px 0;
     display: flex;
     justify-content: space-between; /* 将导航栏内容从左到右分布 */
@@ -58,7 +57,8 @@
 
 .nav-bar ul li a {
     color: white;
-    padding: 10px 45px; /* 调整左右内边距，使得样式好看*/
+    font-weight: bold;
+    padding: 10px 40px;
     text-decoration: none;
     display: inline-block;
     position: relative; /* 为了让底部横线相对于链接定位 */
@@ -85,7 +85,7 @@
 
 .switch {
     display: flex;
-    border: 2px solid #418ac8;
+    border: 2px solid #ce0b0b;
     border-radius: 25px;
     overflow: hidden;
     cursor: pointer;
@@ -104,18 +104,18 @@
 }
 
 .slider:nth-child(1) {
-    background-color: #418ac8; /* 中文按钮的默认背景色 */
+    background-color: #b90019; /* 中文按钮的默认背景色 */
     color: #f9f9f9; /* 中文按钮的默认文字色 */
 }
 
 .slider:nth-child(2) {
-    background-color: #418ac8; /* 英文按钮的默认背景色 */
+    background-color: #b90019; /* 英文按钮的默认背景色 */
     color: #f9f9f9; /* 英文按钮的默认文字色 */
 }
 
 .slider.active {
     background-color: white; /* 激活按钮的背景色 */
-    color: #418ac8; /* 激活按钮的文字色 */
+    color: #b90019; /* 激活按钮的文字色 */
 }
 /*layout.ejs*/
 .container {
@@ -133,7 +133,7 @@
 }
 
 .post-item {
-    border: 2px solid #418ac8; /* 蓝色边框 */
+    border: 2px solid #b90019; /* 蓝色边框 */
     border-radius: 5px;
     margin-bottom: 15px;
     padding: 15px;
@@ -155,34 +155,11 @@
 .post-detail-link {
     color: #418ac8; /* 蓝色 */
     text-decoration: none; /* 去掉下划线 */
+    font-weight: bold;
 }
 
 .post-detail-link:hover {
     text-decoration: underline; /* 鼠标悬停时加下划线 */
-}
-/*分页*/
-.pagination {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.pagination-link {
-    display: inline-block;
-    padding: 5px 10px;
-    margin: 0 2px;
-    text-decoration: none;
-    color: #418ac8; /* 蓝色 */
-    border: 1px solid #418ac8;
-    border-radius: 3px;
-}
-
-.pagination-link.active {
-    background-color: #418ac8;
-    color: white;
-}
-
-.pagination-link:hover {
-    background-color: #f0f0f0;
 }
 
 /* Footer 样式 */
@@ -203,65 +180,9 @@
     text-align: center;
     padding: 0 20px; /* 为手机端留出内边距 */
 }
+/*
 
-.footer-social-links a {
-    color: #007BFF;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-.footer-social-links a:hover {
-    text-decoration: underline;
-}
-
-/*index.ejs*/
-.post-preview {
-    border: 2px solid #418ac8; /* 蓝色边框 */
-    border-radius: 5px;
-    margin: 20px 0;
-    padding: 20px;
-    background-color: #f9f9f9;
-}
-
-.post-preview h2 {
-    margin: 0 0 10px;
-}
-
-.post-preview .post-summary {
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* 显示三行 */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis; /* 省略号 */
-    margin-bottom: 10px;
-}
-
-.post-preview .read-more {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.post-preview .read-more:hover {
-    text-decoration: underline;
-}
-
-.pagination {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.pagination a {
-    color: #007bff;
-    text-decoration: none;
-    margin: 0 5px;
-}
-
-.pagination a:hover {
-    text-decoration: underline;
-}
-
-
-/* 手机端适应样式 */
+!* 手机端适应样式 *!
 @media (max-width: 768px) {
     .site-header {
         padding: 10px;
@@ -284,15 +205,100 @@
     }
 
     .footer-content {
-        padding: 0 10px; /* 减少内边距适应小屏幕 */
+        padding: 0 10px;
     }
 
     .site-footer p {
-        font-size: 0.85em; /* 调整字体大小以适应小屏幕 */
+        font-size: 0.85em;
+    }
+}*/
+@media only screen and (max-width: 768px) {
+    /* 设置头部宽度为 100% 并居中 */
+    .site-header {
+        width: 100%;
+        max-width: 100%; /* 对于手机设备，设为 100% */
+        padding: 10px 0; /* 减小顶部和底部内边距 */
     }
 
-    .footer-social-links a {
-        display: block; /* 在手机上社交媒体链接垂直排列 */
-        margin: 5px 0; /* 每个链接之间增加一些空隙 */
+    /* 实验室名称样式调整 */
+    .lab-name h1 {
+        font-size: 1.8em; /* 调整字体大小适应手机端 */
+    }
+
+    .lab-name h2 {
+        font-size: 1.2em; /* 调整副标题字体 */
+    }
+
+    /* Banner 图片调整 */
+    .banner img {
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    /* 导航栏调整：确保横向排列且自适应手机屏幕 */
+    .nav-bar {
+        padding: 10px 0;
+        flex-direction: column; /* 在手机端，使用纵向排列 */
+        align-items: flex-start; /* 保证左对齐 */
+        position: relative; /* 增加相对定位以便语言切换器不遮挡导航 */
+    }
+
+    .nav-bar ul {
+        width: 100%;
+        flex-direction: row; /* 确保导航栏横向排列 */
+        justify-content: space-around; /* 导航栏项均匀分布 */
+    }
+
+    .nav-bar ul li {
+        margin: 0 5px; /* 减少左右间距 */
+    }
+
+    .nav-bar ul li a {
+        font-size: 0.9em; /* 调整字体大小 */
+        padding: 8px 20px; /* 减小内边距 */
+    }
+
+    /* 语言切换器调整，移动到导航栏下方 */
+    .language-switcher {
+        position: absolute;
+        top: 100%; /* 移动语言切换器到导航栏的下方 */
+        right: 5px;
+        height: 25px; /* 调整高度 */
+        z-index: 1; /* 确保不会覆盖菜单 */
+    }
+
+    .switch {
+        height: 25px; /* 匹配语言切换器高度 */
+        font-size: 14px; /* 调整字体大小 */
+    }
+
+    /* 内容区域调整 */
+    .container {
+        flex-direction: column; /* 在手机端，内容区域纵向排列 */
+        max-width: 100%; /* 全屏宽度 */
+        padding: 10px;
+    }
+
+    /* 文章列表样式调整 */
+    .post-item {
+        padding: 10px; /* 减少内边距 */
+    }
+
+    .post-item h2 {
+        font-size: 1.2em; /* 缩小标题字体 */
+    }
+
+    .post-item .post-date {
+        font-size: 0.8em; /* 缩小日期字体 */
+    }
+
+    /* 页脚样式调整 */
+    .site-footer {
+        padding: 15px 0;
+        font-size: 0.8em; /* 调整字体大小 */
+    }
+
+    .footer-content {
+        padding: 0 10px; /* 为手机端减少内边距 */
     }
 }
