@@ -1,4 +1,4 @@
-<!-- 侧边栏 -->
+<!-- !侧边栏 -->
 <div class="sidebar2">
     <h3><i class="fas fa-list"></i> <%= __('common.title') %></h3>
     <a href="/lab/<%= page.lang || config.default_language %>/members/"><%= __('common.link1') %></a>
@@ -8,13 +8,13 @@
     .sidebar2 {
         width: 250px;
         min-height: 120px;
-        border: 2px solid #418ac8;
+        border: 2px solid #ce0b0b;
         border-radius: 5px;
         background-color: #f9f9f9; /* 背景色 */
     }
 
     .sidebar2 h3 {
-        background-color: #418ac8;
+        background-color: #ce0b0b;
         color: white;
         padding: 10px;
         margin: 0; /* 移除默认的 margin */
@@ -35,11 +35,35 @@
     }
 
     .sidebar2 a:hover {
-        background-color: #316ba8; /* 悬停时背景色 */
+        color: #0073e6; /* 鼠标悬停时标题字体变为蓝色 */
     }
 
     .sidebar2 p {
         padding: 10px;
         margin: 0;
+    }
+
+    /* 手机端样式调整 */
+    @media only screen and (max-width: 768px) {
+        .sidebar2 {
+            width: 100%; /* 在手机端占满宽度 */
+            margin-bottom: 20px; /* 增加底部间距 */
+        }
+
+        .sidebar2 h3 {
+            font-size: 1.2em; /* 调整标题大小 */
+            padding: 8px; /* 减少内边距 */
+        }
+
+        .sidebar2 a {
+            font-size: 1em; /* 调整链接的字体大小 */
+            padding: 8px; /* 减少内边距 */
+            margin: 5px; /* 减少链接的外边距 */
+        }
+
+        .sidebar2 p {
+            font-size: 1em; /* 调整段落的字体大小 */
+            padding: 8px; /* 减少内边距 */
+        }
     }
 </style>

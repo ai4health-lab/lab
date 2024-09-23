@@ -44,13 +44,13 @@ const posts = site.posts.filter(post => post.lang === currentLang);
     .sidebar3 {
         width: 250px;
         min-height: 120px;
-        border: 2px solid #418ac8;
+        border: 2px solid #ce0b0b;
         border-radius: 5px;
         background-color: #f9f9f9; /* 背景色 */
     }
 
     .sidebar3 h3 {
-        background-color: #418ac8;
+        background-color: #ce0b0b;
         color: white;
         padding: 10px;
         margin: 0;
@@ -118,14 +118,37 @@ const posts = site.posts.filter(post => post.lang === currentLang);
         text-align: center;
         padding: 10px;
         font-size: 14px;
-        color: #0073e6;
+        color: #007bff;
+        font-weight: bold;
         text-decoration: none;
     }
 
     .more-link:hover {
         text-decoration: underline;
     }
+    /* 手机端样式调整 */
+    @media only screen and (max-width: 768px) {
+        .sidebar3 {
+            width: 100%; /* 在手机端占满宽度 */
+            margin-bottom: 20px; /* 增加底部间距 */
+        }
 
+        .news-title {
+            font-size: 1em; /* 调整标题的字体大小 */
+        }
+
+        .news-date {
+            font-size: 0.9em; /* 调整日期的字体大小 */
+        }
+
+        .pagination {
+            font-size: 1em; /* 调整分页按钮的字体大小 */
+        }
+
+        .more-link {
+            font-size: 1em; /* 调整 "更多" 链接的字体大小 */
+        }
+    }
 </style>
 <script>
     function toggleContent(event) {

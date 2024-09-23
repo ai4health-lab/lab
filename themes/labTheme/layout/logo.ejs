@@ -1,0 +1,68 @@
+<logo class="logo">
+    <div class="lab_logo">
+        <img src="<%= theme.logo %>" alt="实验室logo">
+    </div>
+    <!-- 实验室名称 -->
+    <div class="lab-name">
+        <h1>数基生命与智能健康实验室</h1>
+        <h2>Digital Life and Intelligent Health Laboratory</h2>
+    </div>
+</logo>
+<style>
+    /* 设置 logo 容器居中，并限定最大宽度为 1050px */
+    .logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1050px;
+        margin: 0 auto; /* 居中 */
+        padding: 20px 0;
+    }
+
+    /* 实验室图标靠左， */
+    .lab_logo img {
+        max-height: 100px; /* 调整 logo 尺寸 */
+    }
+
+    /* 实验室名称保持左对齐 */
+    .lab-name {
+        text-align: left; /* 左对齐 */
+    }
+
+    .lab-name h1 {
+        font-size: 2.5em;
+        margin: 0;
+        font-weight: bold;
+    }
+
+    .lab-name h2 {
+        font-size: 1.5em;
+        margin: 5px 0;
+    }
+
+    /* 手机端适配 - 屏幕宽度小于768px时生效 */
+    @media only screen and (max-width: 768px) {
+        .logo {
+            flex-direction: column; /* 垂直堆叠 logo 和名称 */
+            align-items: center; /* 在垂直方向居中对齐 */
+        }
+
+        .lab_logo img {
+            max-height: 80px; /* 在手机端稍微缩小 logo 尺寸 */
+            margin-bottom: 10px; /* 添加底部间距，分隔 logo 和名称 */
+        }
+
+        .lab-name {
+            text-align: center; /* 手机端居中对齐实验室名称 */
+        }
+
+        .lab-name h1 {
+            font-size: 2em; /* 调整标题字体大小 */
+        }
+
+        .lab-name h2 {
+            font-size: 1.2em; /* 调整副标题字体大小 */
+        }
+    }
+</style>

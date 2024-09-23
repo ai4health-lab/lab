@@ -1,10 +1,10 @@
 # 菜单配置
 menu:
-  home: home
-  members: members
-  research: research
-  publications: publications
-  tools: tools
+  home: Home
+  members: Members
+  research: Research
+  publications: Publications
+  tools: Tools
 #侧边栏1
 join:
   title: Join Us
