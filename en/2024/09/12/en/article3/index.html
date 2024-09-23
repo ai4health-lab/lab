@@ -80,11 +80,6 @@
 <!-- 引用 header.ejs -->
 <header class="site-header">
 
-    <!-- Banner 图片 -->
-    <div class="banner">
-        <img src="/lab/images/banner.png" alt="实验室Banner">
-    </div>
-
     <!-- 导航栏和语言切换器容器 -->
     <div class="nav-container">
         <!-- 导航栏 -->
@@ -140,6 +135,11 @@
                 </div>
             </div>
         </nav>
+    </div>
+
+    <!-- Banner 图片 -->
+    <div class="banner">
+        <img src="/lab/images/banner.png" alt="实验室Banner">
     </div>
 
     <script>
@@ -235,118 +235,6 @@
 <!-- 内容区域 -->
 <div class="container"
      style="display: flex; justify-content: space-between; max-width: 1050px; margin: 0 auto; min-height: 800px">
-    <!-- 内容区域 -->
-    <div class="content" style="flex: 1; padding-right: 1%">
-        <article class="post">
-    <header class="post-header">
-        <div class="post-title">
-            <h3>Fusion of Medical Imaging and Genomic Data： The New Era of Artificial Intelligence</h3>
-        </div>
-        
-            
-            <div class="post-date">
-                <p>2024-09-12</p>
-            </div>
-        
-    </header>
-    <div class="post-content">
-        <p><strong>Abstract</strong>:<br>This article explores artificial intelligence methods for integrating medical imaging data with genomic data. It discusses how combining these heterogeneous data sources can enhance disease prediction and personalized medicine accuracy, including technologies and case studies of multimodal data fusion.</p>
-<p><strong>Main Content</strong>:</p>
-<ul>
-<li>Methods for integrating medical imaging data with genomic data</li>
-<li>Technical background of multimodal data fusion</li>
-<li>Practical case studies, such as personalized cancer treatment</li>
-<li>Challenges and solutions in data fusion</li>
-<li>Future research trends and potential</li>
-</ul>
-
-    </div>
-</article>
-
-<style>
-    .post {
-        border: 2px solid #ce0b0b;
-        border-radius: 5px;
-        margin: 3px auto;
-        max-width: 1050px;
-        min-height: 450px;
-        background-color: #f9f9f9;
-        position: relative; /* 添加以确保 post-date 绝对定位 */
-        padding-top: 0; /* 确保顶部边距与标题对齐 */
-    }
-
-    .post-header {
-        margin: 0; /* 移除 header 外边距 */
-    }
-
-    .post-title {
-        background-color: #ce0b0b; /* 蓝色背景 */
-        height: 22px;
-        color: white;
-        padding: 10px; /* 内边距，确保文本不会紧贴边缘 */
-        margin: 0; /* 移除外边距 */
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        position: relative;
-        z-index: 1; /* 确保标题在内容之上 */
-        box-shadow: 0 0 0 2px #ce0b0b; /* 确保左边框和上边框的颜色 */
-        margin: -2px 0 0 -2px; /* 确保背景色紧挨左边框和上边框 */
-    }
-
-    .post-title h3 {
-        margin: 0;
-        font-weight: bold; /* 加粗字体 */
-    }
-
-    .post-date {
-        position: absolute;
-        right: 10px;
-        bottom: 10px;
-        font-size: 0.9em;
-        color: #000000;
-        padding: 5px 10px;
-        border-radius: 3px;
-    }
-    .post-content {
-        padding: 20px;
-        line-height: 1.6;
-    }
-
-    @media only screen and (max-width: 768px) {
-        .post {
-            max-width: 100%; /* 占据手机屏幕的宽度 */
-            min-height: auto; /* 移除固定高度 */
-            margin: 3px 5px; /* 减少边距 */
-        }
-
-        .post-title {
-            font-size: 16px; /* 缩小标题字体 */
-            padding: 8px; /* 调整内边距 */
-            height: auto; /* 确保标题高度自适应 */
-            box-shadow: none; /* 去除不必要的阴影 */
-        }
-
-        .post-title h3 {
-            font-size: 1.2em; /* 缩小标题字体 */
-        }
-
-        .post-content {
-            padding: 10px; /* 减少内容的内边距 */
-            font-size: 1em; /* 调整内容字体大小 */
-            line-height: 1.4; /* 减小行高 */
-        }
-
-        .post-date {
-            font-size: 0.8em; /* 缩小日期字体 */
-            padding: 3px 5px; /* 缩小日期的内边距 */
-            right: 5px; /* 调整日期位置 */
-            bottom: 5px;
-        }
-    }
-
-</style>
-
-    </div>
     <!-- 侧边栏区域 -->
     <div class="sidebars" style="display: flex; flex-direction: column; gap: 20px;">
         <!-- 使用 flex-direction: column; 让侧边栏上下排列，并设置间距 -->
@@ -502,7 +390,7 @@
         <ul class="news-list">
             
                 <li class="news-item">
-                    <a href="en/2024/09/12/en/article1/" onclick="handleLinkClick(event, 'en/2024/09/12/en/article1/')"
+                    <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article1/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article1/')"
                        title="Deep Learning-Based Medical Image Diagnosis：From Theory to Practice">
                         <span class="news-title">Deep Learn...</span>
                         <span class="news-date">2024-09-12</span>
@@ -510,7 +398,7 @@
                 </li>
             
                 <li class="news-item">
-                    <a href="en/2024/09/18/en/article10/" onclick="handleLinkClick(event, 'en/2024/09/18/en/article10/')"
+                    <a href="https://xuewenrui.github.io/lab/en/2024/09/18/en/article10/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/18/en/article10/')"
                        title="Data Mining Techniques in Genomics">
                         <span class="news-title">Data Minin...</span>
                         <span class="news-date">2024-09-18</span>
@@ -518,7 +406,7 @@
                 </li>
             
                 <li class="news-item">
-                    <a href="en/2024/09/19/en/article11/" onclick="handleLinkClick(event, 'en/2024/09/19/en/article11/')"
+                    <a href="https://xuewenrui.github.io/lab/en/2024/09/19/en/article11/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/19/en/article11/')"
                        title="Applications of Artificial Intelligence in Medical Data Management">
                         <span class="news-title">Applicatio...</span>
                         <span class="news-date">2024-09-19</span>
@@ -526,17 +414,17 @@
                 </li>
             
                 <li class="news-item">
-                    <a href="en/2024/09/12/en/article3/" onclick="handleLinkClick(event, 'en/2024/09/12/en/article3/')"
-                       title="Fusion of Medical Imaging and Genomic Data： The New Era of Artificial Intelligence">
-                        <span class="news-title">Fusion of ...</span>
+                    <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article2/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article2/')"
+                       title="Applications of Artificial Intelligence in Genomics： Decoding the Code of Life">
+                        <span class="news-title">Applicatio...</span>
                         <span class="news-date">2024-09-12</span>
                     </a>
                 </li>
             
                 <li class="news-item">
-                    <a href="en/2024/09/12/en/article4/" onclick="handleLinkClick(event, 'en/2024/09/12/en/article4/')"
-                       title="Integration of Medical Imaging and Genomic Data">
-                        <span class="news-title">Integratio...</span>
+                    <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article3/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article3/')"
+                       title="Fusion of Medical Imaging and Genomic Data： The New Era of Artificial Intelligence">
+                        <span class="news-title">Fusion of ...</span>
                         <span class="news-date">2024-09-12</span>
                     </a>
                 </li>
@@ -545,15 +433,15 @@
                 <div id="more-content" class="more-content hidden">
                     
                         <li class="news-item">
-                            <a href="en/2024/09/12/en/article2/" onclick="handleLinkClick(event, 'en/2024/09/12/en/article2/')"
-                               title="Applications of Artificial Intelligence in Genomics： Decoding the Code of Life">
-                                <span class="news-title">Applicatio...</span>
+                            <a href="https://xuewenrui.github.io/lab/en/2024/09/12/en/article4/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/12/en/article4/')"
+                               title="Integration of Medical Imaging and Genomic Data">
+                                <span class="news-title">Integratio...</span>
                                 <span class="news-date">2024-09-12</span>
                             </a>
                         </li>
                     
                         <li class="news-item">
-                            <a href="en/2024/09/13/en/article5/" onclick="handleLinkClick(event, 'en/2024/09/13/en/article5/')"
+                            <a href="https://xuewenrui.github.io/lab/en/2024/09/13/en/article5/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/13/en/article5/')"
                                title="Applications of Artificial Intelligence in Medical Imaging">
                                 <span class="news-title">Applicatio...</span>
                                 <span class="news-date">2024-09-13</span>
@@ -561,7 +449,7 @@
                         </li>
                     
                         <li class="news-item">
-                            <a href="en/2024/09/14/en/article6/" onclick="handleLinkClick(event, 'en/2024/09/14/en/article6/')"
+                            <a href="https://xuewenrui.github.io/lab/en/2024/09/14/en/article6/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/14/en/article6/')"
                                title="Applications of Machine Learning in Genomics">
                                 <span class="news-title">Applicatio...</span>
                                 <span class="news-date">2024-09-14</span>
@@ -569,15 +457,7 @@
                         </li>
                     
                         <li class="news-item">
-                            <a href="en/2024/09/15/en/article7/" onclick="handleLinkClick(event, 'en/2024/09/15/en/article7/')"
-                               title="Application of Interdisciplinary Data Fusion in Medical Research">
-                                <span class="news-title">Applicatio...</span>
-                                <span class="news-date">2024-09-15</span>
-                            </a>
-                        </li>
-                    
-                        <li class="news-item">
-                            <a href="en/2024/09/16/en/article8/" onclick="handleLinkClick(event, 'en/2024/09/16/en/article8/')"
+                            <a href="https://xuewenrui.github.io/lab/en/2024/09/16/en/article8/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/16/en/article8/')"
                                title="Cutting-Edge Applications of Artificial Intelligence in Drug Development">
                                 <span class="news-title">Cutting-Ed...</span>
                                 <span class="news-date">2024-09-16</span>
@@ -585,10 +465,18 @@
                         </li>
                     
                         <li class="news-item">
-                            <a href="en/2024/09/17/en/article9/" onclick="handleLinkClick(event, 'en/2024/09/17/en/article9/')"
+                            <a href="https://xuewenrui.github.io/lab/en/2024/09/17/en/article9/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/17/en/article9/')"
                                title="Applications of Data Science in Public Health">
                                 <span class="news-title">Applicatio...</span>
                                 <span class="news-date">2024-09-17</span>
+                            </a>
+                        </li>
+                    
+                        <li class="news-item">
+                            <a href="https://xuewenrui.github.io/lab/en/2024/09/15/en/article7/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/en/2024/09/15/en/article7/')"
+                               title="Application of Interdisciplinary Data Fusion in Medical Research">
+                                <span class="news-title">Applicatio...</span>
+                                <span class="news-date">2024-09-15</span>
                             </a>
                         </li>
                     
@@ -739,6 +627,119 @@
 </script>
         
     </div>
+    <!-- 内容区域 -->
+    <div class="content" style="flex: 1; padding-left: 1%">
+        <article class="post">
+    <header class="post-header">
+        <div class="post-title">
+            <h3>Fusion of Medical Imaging and Genomic Data： The New Era of Artificial Intelligence</h3>
+        </div>
+        
+            
+            <div class="post-date">
+                <p>2024-09-12</p>
+            </div>
+        
+    </header>
+    <div class="post-content">
+        <p><strong>Abstract</strong>:<br>This article explores artificial intelligence methods for integrating medical imaging data with genomic data. It discusses how combining these heterogeneous data sources can enhance disease prediction and personalized medicine accuracy, including technologies and case studies of multimodal data fusion.</p>
+<p><strong>Main Content</strong>:</p>
+<ul>
+<li>Methods for integrating medical imaging data with genomic data</li>
+<li>Technical background of multimodal data fusion</li>
+<li>Practical case studies, such as personalized cancer treatment</li>
+<li>Challenges and solutions in data fusion</li>
+<li>Future research trends and potential</li>
+</ul>
+
+    </div>
+</article>
+
+<style>
+    .post {
+        border: 2px solid #ce0b0b;
+        border-radius: 5px;
+        margin: 3px auto;
+        max-width: 1050px;
+        min-height: 450px;
+        background-color: #f9f9f9;
+        position: relative; /* 添加以确保 post-date 绝对定位 */
+        padding-top: 0; /* 确保顶部边距与标题对齐 */
+    }
+
+    .post-header {
+        margin: 0; /* 移除 header 外边距 */
+    }
+
+    .post-title {
+        background-color: #ce0b0b; /* 蓝色背景 */
+        height: 22px;
+        color: white;
+        padding: 10px; /* 内边距，确保文本不会紧贴边缘 */
+        margin: 0; /* 移除外边距 */
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        position: relative;
+        z-index: 1; /* 确保标题在内容之上 */
+        box-shadow: 0 0 0 2px #ce0b0b; /* 确保左边框和上边框的颜色 */
+        margin: -2px 0 0 -2px; /* 确保背景色紧挨左边框和上边框 */
+    }
+
+    .post-title h3 {
+        margin: 0;
+        font-weight: bold; /* 加粗字体 */
+    }
+
+    .post-date {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        font-size: 0.9em;
+        color: #000000;
+        padding: 5px 10px;
+        border-radius: 3px;
+    }
+    .post-content {
+        padding: 20px;
+        line-height: 1.6;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .post {
+            max-width: 100%; /* 占据手机屏幕的宽度 */
+            min-height: auto; /* 移除固定高度 */
+            margin: 3px 5px; /* 减少边距 */
+        }
+
+        .post-title {
+            font-size: 16px; /* 缩小标题字体 */
+            padding: 8px; /* 调整内边距 */
+            height: auto; /* 确保标题高度自适应 */
+            box-shadow: none; /* 去除不必要的阴影 */
+        }
+
+        .post-title h3 {
+            font-size: 1.2em; /* 缩小标题字体 */
+        }
+
+        .post-content {
+            padding: 10px; /* 减少内容的内边距 */
+            font-size: 1em; /* 调整内容字体大小 */
+            line-height: 1.4; /* 减小行高 */
+        }
+
+        .post-date {
+            font-size: 0.8em; /* 缩小日期字体 */
+            padding: 3px 5px; /* 缩小日期的内边距 */
+            right: 5px; /* 调整日期位置 */
+            bottom: 5px;
+        }
+    }
+
+</style>
+
+    </div>
+
 </div>
 <!-- 引用 footer.ejs -->
 <footer class="site-footer">

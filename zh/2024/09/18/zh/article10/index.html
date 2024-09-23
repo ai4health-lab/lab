@@ -80,11 +80,6 @@
 <!-- 引用 header.ejs -->
 <header class="site-header">
 
-    <!-- Banner 图片 -->
-    <div class="banner">
-        <img src="/lab/images/banner.png" alt="实验室Banner">
-    </div>
-
     <!-- 导航栏和语言切换器容器 -->
     <div class="nav-container">
         <!-- 导航栏 -->
@@ -140,6 +135,11 @@
                 </div>
             </div>
         </nav>
+    </div>
+
+    <!-- Banner 图片 -->
+    <div class="banner">
+        <img src="/lab/images/banner.png" alt="实验室Banner">
     </div>
 
     <script>
@@ -235,118 +235,6 @@
 <!-- 内容区域 -->
 <div class="container"
      style="display: flex; justify-content: space-between; max-width: 1050px; margin: 0 auto; min-height: 800px">
-    <!-- 内容区域 -->
-    <div class="content" style="flex: 1; padding-right: 1%">
-        <article class="post">
-    <header class="post-header">
-        <div class="post-title">
-            <h3>基因组学中的数据挖掘技术</h3>
-        </div>
-        
-            
-            <div class="post-date">
-                <p>2024-09-18</p>
-            </div>
-        
-    </header>
-    <div class="post-content">
-        <p><strong>摘要</strong>:<br>本文讨论了数据挖掘技术在基因组学中的应用，重点介绍了如何从复杂的基因组数据中提取有价值的信息。文章涵盖了数据预处理、模式识别和关联分析等方面。</p>
-<p><strong>主要内容</strong>:</p>
-<ul>
-<li>数据挖掘在基因组学中的应用</li>
-<li>数据预处理技术</li>
-<li>模式识别和关联分析方法</li>
-<li>实际应用案例</li>
-<li>技术挑战和未来发展方向</li>
-</ul>
-
-    </div>
-</article>
-
-<style>
-    .post {
-        border: 2px solid #ce0b0b;
-        border-radius: 5px;
-        margin: 3px auto;
-        max-width: 1050px;
-        min-height: 450px;
-        background-color: #f9f9f9;
-        position: relative; /* 添加以确保 post-date 绝对定位 */
-        padding-top: 0; /* 确保顶部边距与标题对齐 */
-    }
-
-    .post-header {
-        margin: 0; /* 移除 header 外边距 */
-    }
-
-    .post-title {
-        background-color: #ce0b0b; /* 蓝色背景 */
-        height: 22px;
-        color: white;
-        padding: 10px; /* 内边距，确保文本不会紧贴边缘 */
-        margin: 0; /* 移除外边距 */
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        position: relative;
-        z-index: 1; /* 确保标题在内容之上 */
-        box-shadow: 0 0 0 2px #ce0b0b; /* 确保左边框和上边框的颜色 */
-        margin: -2px 0 0 -2px; /* 确保背景色紧挨左边框和上边框 */
-    }
-
-    .post-title h3 {
-        margin: 0;
-        font-weight: bold; /* 加粗字体 */
-    }
-
-    .post-date {
-        position: absolute;
-        right: 10px;
-        bottom: 10px;
-        font-size: 0.9em;
-        color: #000000;
-        padding: 5px 10px;
-        border-radius: 3px;
-    }
-    .post-content {
-        padding: 20px;
-        line-height: 1.6;
-    }
-
-    @media only screen and (max-width: 768px) {
-        .post {
-            max-width: 100%; /* 占据手机屏幕的宽度 */
-            min-height: auto; /* 移除固定高度 */
-            margin: 3px 5px; /* 减少边距 */
-        }
-
-        .post-title {
-            font-size: 16px; /* 缩小标题字体 */
-            padding: 8px; /* 调整内边距 */
-            height: auto; /* 确保标题高度自适应 */
-            box-shadow: none; /* 去除不必要的阴影 */
-        }
-
-        .post-title h3 {
-            font-size: 1.2em; /* 缩小标题字体 */
-        }
-
-        .post-content {
-            padding: 10px; /* 减少内容的内边距 */
-            font-size: 1em; /* 调整内容字体大小 */
-            line-height: 1.4; /* 减小行高 */
-        }
-
-        .post-date {
-            font-size: 0.8em; /* 缩小日期字体 */
-            padding: 3px 5px; /* 缩小日期的内边距 */
-            right: 5px; /* 调整日期位置 */
-            bottom: 5px;
-        }
-    }
-
-</style>
-
-    </div>
     <!-- 侧边栏区域 -->
     <div class="sidebars" style="display: flex; flex-direction: column; gap: 20px;">
         <!-- 使用 flex-direction: column; 让侧边栏上下排列，并设置间距 -->
@@ -502,7 +390,7 @@
         <ul class="news-list">
             
                 <li class="news-item">
-                    <a href="zh/2024/09/12/zh/article1/" onclick="handleLinkClick(event, 'zh/2024/09/12/zh/article1/')"
+                    <a href="https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article1/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article1/')"
                        title="基于深度学习的医学图像诊断：从理论到实践">
                         <span class="news-title">基于深度学习的医学图...</span>
                         <span class="news-date">2024-09-12</span>
@@ -510,7 +398,7 @@
                 </li>
             
                 <li class="news-item">
-                    <a href="zh/2024/09/18/zh/article10/" onclick="handleLinkClick(event, 'zh/2024/09/18/zh/article10/')"
+                    <a href="https://xuewenrui.github.io/lab/zh/2024/09/18/zh/article10/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/zh/2024/09/18/zh/article10/')"
                        title="基因组学中的数据挖掘技术">
                         <span class="news-title">基因组学中的数据挖掘...</span>
                         <span class="news-date">2024-09-18</span>
@@ -518,7 +406,7 @@
                 </li>
             
                 <li class="news-item">
-                    <a href="zh/2024/09/19/zh/article11/" onclick="handleLinkClick(event, 'zh/2024/09/19/zh/article11/')"
+                    <a href="https://xuewenrui.github.io/lab/zh/2024/09/19/zh/article11/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/zh/2024/09/19/zh/article11/')"
                        title="人工智能在医疗数据管理中的应用">
                         <span class="news-title">人工智能在医疗数据管...</span>
                         <span class="news-date">2024-09-19</span>
@@ -526,18 +414,18 @@
                 </li>
             
                 <li class="news-item">
-                    <a href="zh/2024/09/12/zh/article3/" onclick="handleLinkClick(event, 'zh/2024/09/12/zh/article3/')"
-                       title="医学图像与基因数据融合：人工智能的新时代">
-                        <span class="news-title">医学图像与基因数据融...</span>
+                    <a href="https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article2/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article2/')"
+                       title="人工智能在基因组学中的应用：解码生命的密码">
+                        <span class="news-title">人工智能在基因组学中...</span>
                         <span class="news-date">2024-09-12</span>
                     </a>
                 </li>
             
                 <li class="news-item">
-                    <a href="zh/2024/09/13/zh/article5/" onclick="handleLinkClick(event, 'zh/2024/09/13/zh/article5/')"
-                       title="人工智能在医学影像中的应用">
-                        <span class="news-title">人工智能在医学影像中...</span>
-                        <span class="news-date">2024-09-13</span>
+                    <a href="https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article3/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article3/')"
+                       title="医学图像与基因数据融合：人工智能的新时代">
+                        <span class="news-title">医学图像与基因数据融...</span>
+                        <span class="news-date">2024-09-12</span>
                     </a>
                 </li>
             
@@ -545,15 +433,7 @@
                 <div id="more-content" class="more-content hidden">
                     
                         <li class="news-item">
-                            <a href="zh/2024/09/12/zh/article2/" onclick="handleLinkClick(event, 'zh/2024/09/12/zh/article2/')"
-                               title="人工智能在基因组学中的应用：解码生命的密码">
-                                <span class="news-title">人工智能在基因组学中...</span>
-                                <span class="news-date">2024-09-12</span>
-                            </a>
-                        </li>
-                    
-                        <li class="news-item">
-                            <a href="zh/2024/09/12/zh/article4/" onclick="handleLinkClick(event, 'zh/2024/09/12/zh/article4/')"
+                            <a href="https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article4/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/zh/2024/09/12/zh/article4/')"
                                title="医学图像与基因数据融合：人工智能的新时代">
                                 <span class="news-title">医学图像与基因数据融...</span>
                                 <span class="news-date">2024-09-12</span>
@@ -561,7 +441,15 @@
                         </li>
                     
                         <li class="news-item">
-                            <a href="zh/2024/09/14/zh/article6/" onclick="handleLinkClick(event, 'zh/2024/09/14/zh/article6/')"
+                            <a href="https://xuewenrui.github.io/lab/zh/2024/09/13/zh/article5/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/zh/2024/09/13/zh/article5/')"
+                               title="人工智能在医学影像中的应用">
+                                <span class="news-title">人工智能在医学影像中...</span>
+                                <span class="news-date">2024-09-13</span>
+                            </a>
+                        </li>
+                    
+                        <li class="news-item">
+                            <a href="https://xuewenrui.github.io/lab/zh/2024/09/14/zh/article6/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/zh/2024/09/14/zh/article6/')"
                                title="基因组学中的机器学习应用">
                                 <span class="news-title">基因组学中的机器学习...</span>
                                 <span class="news-date">2024-09-14</span>
@@ -569,15 +457,7 @@
                         </li>
                     
                         <li class="news-item">
-                            <a href="zh/2024/09/15/zh/article7/" onclick="handleLinkClick(event, 'zh/2024/09/15/zh/article7/')"
-                               title="跨学科数据融合在医学研究中的应用">
-                                <span class="news-title">跨学科数据融合在医学...</span>
-                                <span class="news-date">2024-09-15</span>
-                            </a>
-                        </li>
-                    
-                        <li class="news-item">
-                            <a href="zh/2024/09/17/zh/article9/" onclick="handleLinkClick(event, 'zh/2024/09/17/zh/article9/')"
+                            <a href="https://xuewenrui.github.io/lab/zh/2024/09/17/zh/article9/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/zh/2024/09/17/zh/article9/')"
                                title="数据科学在公共卫生领域的应用">
                                 <span class="news-title">数据科学在公共卫生领...</span>
                                 <span class="news-date">2024-09-17</span>
@@ -585,10 +465,18 @@
                         </li>
                     
                         <li class="news-item">
-                            <a href="zh/2024/09/16/zh/article8/" onclick="handleLinkClick(event, 'zh/2024/09/16/zh/article8/')"
+                            <a href="https://xuewenrui.github.io/lab/zh/2024/09/16/zh/article8/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/zh/2024/09/16/zh/article8/')"
                                title="人工智能在药物研发中的前沿应用">
                                 <span class="news-title">人工智能在药物研发中...</span>
                                 <span class="news-date">2024-09-16</span>
+                            </a>
+                        </li>
+                    
+                        <li class="news-item">
+                            <a href="https://xuewenrui.github.io/lab/zh/2024/09/15/zh/article7/" onclick="handleLinkClick(event, 'https://xuewenrui.github.io/lab/zh/2024/09/15/zh/article7/')"
+                               title="跨学科数据融合在医学研究中的应用">
+                                <span class="news-title">跨学科数据融合在医学...</span>
+                                <span class="news-date">2024-09-15</span>
                             </a>
                         </li>
                     
@@ -739,6 +627,119 @@
 </script>
         
     </div>
+    <!-- 内容区域 -->
+    <div class="content" style="flex: 1; padding-left: 1%">
+        <article class="post">
+    <header class="post-header">
+        <div class="post-title">
+            <h3>基因组学中的数据挖掘技术</h3>
+        </div>
+        
+            
+            <div class="post-date">
+                <p>2024-09-18</p>
+            </div>
+        
+    </header>
+    <div class="post-content">
+        <p><strong>摘要</strong>:<br>本文讨论了数据挖掘技术在基因组学中的应用，重点介绍了如何从复杂的基因组数据中提取有价值的信息。文章涵盖了数据预处理、模式识别和关联分析等方面。</p>
+<p><strong>主要内容</strong>:</p>
+<ul>
+<li>数据挖掘在基因组学中的应用</li>
+<li>数据预处理技术</li>
+<li>模式识别和关联分析方法</li>
+<li>实际应用案例</li>
+<li>技术挑战和未来发展方向</li>
+</ul>
+
+    </div>
+</article>
+
+<style>
+    .post {
+        border: 2px solid #ce0b0b;
+        border-radius: 5px;
+        margin: 3px auto;
+        max-width: 1050px;
+        min-height: 450px;
+        background-color: #f9f9f9;
+        position: relative; /* 添加以确保 post-date 绝对定位 */
+        padding-top: 0; /* 确保顶部边距与标题对齐 */
+    }
+
+    .post-header {
+        margin: 0; /* 移除 header 外边距 */
+    }
+
+    .post-title {
+        background-color: #ce0b0b; /* 蓝色背景 */
+        height: 22px;
+        color: white;
+        padding: 10px; /* 内边距，确保文本不会紧贴边缘 */
+        margin: 0; /* 移除外边距 */
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        position: relative;
+        z-index: 1; /* 确保标题在内容之上 */
+        box-shadow: 0 0 0 2px #ce0b0b; /* 确保左边框和上边框的颜色 */
+        margin: -2px 0 0 -2px; /* 确保背景色紧挨左边框和上边框 */
+    }
+
+    .post-title h3 {
+        margin: 0;
+        font-weight: bold; /* 加粗字体 */
+    }
+
+    .post-date {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        font-size: 0.9em;
+        color: #000000;
+        padding: 5px 10px;
+        border-radius: 3px;
+    }
+    .post-content {
+        padding: 20px;
+        line-height: 1.6;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .post {
+            max-width: 100%; /* 占据手机屏幕的宽度 */
+            min-height: auto; /* 移除固定高度 */
+            margin: 3px 5px; /* 减少边距 */
+        }
+
+        .post-title {
+            font-size: 16px; /* 缩小标题字体 */
+            padding: 8px; /* 调整内边距 */
+            height: auto; /* 确保标题高度自适应 */
+            box-shadow: none; /* 去除不必要的阴影 */
+        }
+
+        .post-title h3 {
+            font-size: 1.2em; /* 缩小标题字体 */
+        }
+
+        .post-content {
+            padding: 10px; /* 减少内容的内边距 */
+            font-size: 1em; /* 调整内容字体大小 */
+            line-height: 1.4; /* 减小行高 */
+        }
+
+        .post-date {
+            font-size: 0.8em; /* 缩小日期字体 */
+            padding: 3px 5px; /* 缩小日期的内边距 */
+            right: 5px; /* 调整日期位置 */
+            bottom: 5px;
+        }
+    }
+
+</style>
+
+    </div>
+
 </div>
 <!-- 引用 footer.ejs -->
 <footer class="site-footer">
