@@ -16,10 +16,6 @@
 <!-- 内容区域 -->
 <div class="container"
      style="display: flex; justify-content: space-between; max-width: 1050px; margin: 0 auto; min-height: 800px">
-    <!-- 内容区域 -->
-    <div class="content" style="flex: 1; padding-right: 1%">
-        <%- body %>
-    </div>
     <!-- 侧边栏区域 -->
     <div class="sidebars" style="display: flex; flex-direction: column; gap: 20px;">
         <!-- 使用 flex-direction: column; 让侧边栏上下排列，并设置间距 -->
@@ -35,6 +31,11 @@
         <%- partial('sidebar3') %>
         <% } %>
     </div>
+    <!-- 内容区域 -->
+    <div class="content" style="flex: 1; padding-left: 1%">
+        <%- body %>
+    </div>
+
 </div>
 <!-- 引用 footer.ejs -->
 <%- partial('footer') %>

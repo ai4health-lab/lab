@@ -180,38 +180,6 @@
     text-align: center;
     padding: 0 20px; /* 为手机端留出内边距 */
 }
-/*
-
-!* 手机端适应样式 *!
-@media (max-width: 768px) {
-    .site-header {
-        padding: 10px;
-    }
-
-    .lab-name h1 {
-        font-size: 1.8em;
-    }
-
-    .lab-name h2 {
-        font-size: 1.2em;
-    }
-
-    .nav-bar ul {
-        flex-direction: column;
-    }
-
-    .nav-bar ul li {
-        margin: 5px 0;
-    }
-
-    .footer-content {
-        padding: 0 10px;
-    }
-
-    .site-footer p {
-        font-size: 0.85em;
-    }
-}*/
 @media only screen and (max-width: 768px) {
     /* 设置头部宽度为 100% 并居中 */
     .site-header {
