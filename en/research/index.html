@@ -142,7 +142,7 @@
         <img src="/lab/images/banner.png" alt="实验室Banner">
     </div>
 
-    <script>
+ <!--   <script>
         // 设置cookie
         function setCookie(name, value) {
             document.cookie = name + "=" + (value || "") + "; path=/";
@@ -228,7 +228,88 @@
                 }
             });
         });
+    </script>-->
+    <script>
+        // 设置 sessionStorage
+        function setSessionStorage(name, value) {
+            sessionStorage.setItem(name, value);
+        }
+
+        // 获取 sessionStorage
+        function getSessionStorage(name) {
+            return sessionStorage.getItem(name);
+        }
+
+        // 切换语言并设置 sessionStorage
+        function switchLanguage(lang) {
+            var currentPath = window.location.pathname;
+            var root = '/lab'; // 根路径
+
+            var newPath = currentPath.replace(/^\/lab\/(en|zh)/, '').replace(/^\/lab/, '');
+
+            if (newPath.includes('zh') || newPath.includes('en')) {
+                newPath = newPath.replace(/\/zh\//, `/${lang}/`).replace(/\/en\//, `/${lang}/`);
+            }
+
+            if (lang === 'zh') {
+                newPath = '/zh' + newPath;
+            } else {
+                newPath = '/en' + newPath;
+            }
+
+            setSessionStorage("lang", lang); // 存储语言设置
+
+            if (newPath === '/lab/') {
+                window.location.href = root + `/${lang}/`;
+            } else {
+                window.location.href = root + newPath;
+            }
+        }
+
+        // 获取当前语言并从 sessionStorage 中读取
+        function currentLang() {
+            var lang = getSessionStorage('lang') || 'zh';
+            if (!lang) {
+                lang = 'zh';
+                setSessionStorage("lang", lang); // 存储语言
+            }
+            return lang;
+        }
+
+        // 语言切换器的样式
+        document.addEventListener('DOMContentLoaded', function () {
+            var lang = currentLang();
+            document.querySelectorAll('.switch .slider').forEach(function (slider) {
+                if (slider.getAttribute('data-lang') === lang) {
+                    slider.classList.add('active'); // 选中的语言设置样式
+                } else {
+                    slider.classList.remove('active');
+                }
+            });
+
+            // 根据页面路径设置导航栏的活动状态
+            var currentPath = window.location.pathname;
+
+            // 去除 '/lab/' 之前的部分
+            var pathWithoutLab = currentPath.replace(/^\/lab/, '');
+
+            // 定义特殊情况的路径
+            var specialCases = ['/', `/${lang}/`];
+
+            // 根据路径判断活动状态
+            var isHomePage = specialCases.includes(pathWithoutLab);
+
+            document.querySelectorAll('.nav-bar a').forEach(function (link) {
+                var linkHref = link.getAttribute('href').replace(/^\/lab/, '');
+                if (linkHref === pathWithoutLab || (isHomePage && linkHref === `/${lang}/`)) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
     </script>
+
 </header>
 
 
@@ -398,18 +479,18 @@
                 </li>
             
                 <li class="news-item">
-                    <a href="en/2024/09/19/en/article11/" onclick="handleLinkClick(event, 'en/2024/09/19/en/article11/')"
-                       title="Applications of Artificial Intelligence in Medical Data Management">
-                        <span class="news-title">Applicatio...</span>
-                        <span class="news-date">2024-09-19</span>
-                    </a>
-                </li>
-            
-                <li class="news-item">
                     <a href="en/2024/09/18/en/article10/" onclick="handleLinkClick(event, 'en/2024/09/18/en/article10/')"
                        title="Data Mining Techniques in Genomics">
                         <span class="news-title">Data Minin...</span>
                         <span class="news-date">2024-09-18</span>
+                    </a>
+                </li>
+            
+                <li class="news-item">
+                    <a href="en/2024/09/19/en/article11/" onclick="handleLinkClick(event, 'en/2024/09/19/en/article11/')"
+                       title="Applications of Artificial Intelligence in Medical Data Management">
+                        <span class="news-title">Applicatio...</span>
+                        <span class="news-date">2024-09-19</span>
                     </a>
                 </li>
             
@@ -433,6 +514,14 @@
                 <div id="more-content" class="more-content hidden">
                     
                         <li class="news-item">
+                            <a href="en/2024/09/14/en/article6/" onclick="handleLinkClick(event, 'en/2024/09/14/en/article6/')"
+                               title="Applications of Machine Learning in Genomics">
+                                <span class="news-title">Applicatio...</span>
+                                <span class="news-date">2024-09-14</span>
+                            </a>
+                        </li>
+                    
+                        <li class="news-item">
                             <a href="en/2024/09/12/en/article4/" onclick="handleLinkClick(event, 'en/2024/09/12/en/article4/')"
                                title="Integration of Medical Imaging and Genomic Data">
                                 <span class="news-title">Integratio...</span>
@@ -449,14 +538,6 @@
                         </li>
                     
                         <li class="news-item">
-                            <a href="en/2024/09/14/en/article6/" onclick="handleLinkClick(event, 'en/2024/09/14/en/article6/')"
-                               title="Applications of Machine Learning in Genomics">
-                                <span class="news-title">Applicatio...</span>
-                                <span class="news-date">2024-09-14</span>
-                            </a>
-                        </li>
-                    
-                        <li class="news-item">
                             <a href="en/2024/09/15/en/article7/" onclick="handleLinkClick(event, 'en/2024/09/15/en/article7/')"
                                title="Application of Interdisciplinary Data Fusion in Medical Research">
                                 <span class="news-title">Applicatio...</span>
@@ -465,18 +546,18 @@
                         </li>
                     
                         <li class="news-item">
-                            <a href="en/2024/09/17/en/article9/" onclick="handleLinkClick(event, 'en/2024/09/17/en/article9/')"
-                               title="Applications of Data Science in Public Health">
-                                <span class="news-title">Applicatio...</span>
-                                <span class="news-date">2024-09-17</span>
-                            </a>
-                        </li>
-                    
-                        <li class="news-item">
                             <a href="en/2024/09/16/en/article8/" onclick="handleLinkClick(event, 'en/2024/09/16/en/article8/')"
                                title="Cutting-Edge Applications of Artificial Intelligence in Drug Development">
                                 <span class="news-title">Cutting-Ed...</span>
                                 <span class="news-date">2024-09-16</span>
+                            </a>
+                        </li>
+                    
+                        <li class="news-item">
+                            <a href="en/2024/09/17/en/article9/" onclick="handleLinkClick(event, 'en/2024/09/17/en/article9/')"
+                               title="Applications of Data Science in Public Health">
+                                <span class="news-title">Applicatio...</span>
+                                <span class="news-date">2024-09-17</span>
                             </a>
                         </li>
                     
@@ -599,6 +680,7 @@
         }
     }
 </style>
+<!--
 <script>
     function toggleContent(event) {
         event.preventDefault();
@@ -624,7 +706,32 @@
         window.location.href = newUrl;
     }
 
+</script>-->
+<script>
+    function toggleContent(event) {
+        event.preventDefault();
+        const moreContent = document.getElementById('more-content');
+        if (moreContent) {
+            moreContent.classList.toggle('hidden');
+            event.target.textContent = moreContent.classList.contains('hidden') ? 'more' : 'less';
+        }
+    }
+
+    // 获取语言设置
+    function getSessionLanguage() {
+        return sessionStorage.getItem('lang') || 'zh'; // 默认使用 'zh'
+    }
+
+    function handleLinkClick(event, url) {
+        event.preventDefault();
+        const lang = getSessionLanguage();
+        const rootPath = '/lab/';
+        const newUrl = url.replace(/\/zh\//, `/${lang}/`).replace(/\/en\//, `/${lang}/`);
+        window.history.pushState(null, null, rootPath);
+        window.location.href = newUrl;
+    }
 </script>
+
         
     </div>
     <!-- 内容区域 -->
@@ -739,7 +846,7 @@
 
 
 
-<script>
+<!--<script>
     // 获取指定名称的 cookie
     function getCookie(name) {
         let value = "; " + document.cookie;
@@ -749,6 +856,11 @@
 
     // 获取语言设置
     var lang = getCookie('lang') || 'zh'; // 默认使用 'zh'
+</script>-->
+<script>
+    // 获取语言设置
+    var lang = sessionStorage.getItem('lang') || 'zh'; // 默认使用 'zh'
 </script>
+
 </body>
 </html>
