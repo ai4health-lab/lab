@@ -133,14 +133,22 @@
 }
 
 .post-item {
-    border: 2px solid #b90019; /* 蓝色边框 */
+    border: 2px solid #b90019; /* 红色边框 */
     border-radius: 5px;
     margin-bottom: 15px;
     padding: 15px;
     background-color: #f9f9f9; /* 背景色 */
     position: relative; /* 使时间显示在右下角 */
 }
+.post-item h3 a {
+    color: black; /* 默认颜色为黑色 */
+    font-weight: bold; /* 加粗 */
+    text-decoration: none; /* 去掉下划线 */
+}
 
+.post-item h3 a:hover {
+    color: #133da7; /* 鼠标移入时变为紫色 */
+}
 .post-item h2 {
     margin-top: 0;
 }
@@ -153,9 +161,10 @@
     color: #666;
 }
 .post-detail-link {
-    color: #418ac8; /* 蓝色 */
+    color: #007bff; /* 蓝色 */
     text-decoration: none; /* 去掉下划线 */
     font-weight: bold;
+    font-size: 14px;
 }
 
 .post-detail-link:hover {
