@@ -24,6 +24,7 @@ const postsToShow = site.posts.filter(post => post.lang === currentLang).slice(0
         <p><%= __('home.np') %><</p>
     <% } %>
 </div>
+<!--
 <script>
     function getCookie(name) {
         let value = "; " + document.cookie;
@@ -37,6 +38,29 @@ const postsToShow = site.posts.filter(post => post.lang === currentLang).slice(0
 
         // 获取当前语言
         const lang = getCookie('lang') || 'zh';
+
+        // 更新 URL，保持根路径
+        const rootPath = '/lab/';
+        const newUrl = url.replace(/\/zh\//, `/${lang}/`).replace(/\/en\//, `/${lang}/`);
+
+        // 更新浏览器路径并重定向
+        window.history.pushState(null, null, rootPath);
+        window.location.href = newUrl;
+    }
+</script>
+-->
+<script>
+    // 获取 sessionStorage 中的语言
+    function getSessionLanguage() {
+        return sessionStorage.getItem('lang') || 'zh';
+    }
+
+    /*! 点击能够跳转到相应的文章页面 */
+    function handleLinkClick(event, url) {
+        event.preventDefault(); // 阻止默认链接行为
+
+        // 获取当前语言
+        const lang = getSessionLanguage();
 
         // 更新 URL，保持根路径
         const rootPath = '/lab/';

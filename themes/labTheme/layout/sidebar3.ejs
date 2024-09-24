@@ -150,6 +150,7 @@ const posts = site.posts.filter(post => post.lang === currentLang);
         }
     }
 </style>
+<!--
 <script>
     function toggleContent(event) {
         event.preventDefault();
@@ -175,4 +176,28 @@ const posts = site.posts.filter(post => post.lang === currentLang);
         window.location.href = newUrl;
     }
 
+</script>-->
+<script>
+    function toggleContent(event) {
+        event.preventDefault();
+        const moreContent = document.getElementById('more-content');
+        if (moreContent) {
+            moreContent.classList.toggle('hidden');
+            event.target.textContent = moreContent.classList.contains('hidden') ? '<%= __('notice.more') %>' : '<%= __('notice.less') %>';
+        }
+    }
+
+    // 获取语言设置
+    function getSessionLanguage() {
+        return sessionStorage.getItem('lang') || 'zh'; // 默认使用 'zh'
+    }
+
+    function handleLinkClick(event, url) {
+        event.preventDefault();
+        const lang = getSessionLanguage();
+        const rootPath = '/lab/';
+        const newUrl = url.replace(/\/zh\//, `/${lang}/`).replace(/\/en\//, `/${lang}/`);
+        window.history.pushState(null, null, rootPath);
+        window.location.href = newUrl;
+    }
 </script>

@@ -40,7 +40,7 @@
 <!-- 引用 footer.ejs -->
 <%- partial('footer') %>
 
-<script>
+<!--<script>
     // 获取指定名称的 cookie
     function getCookie(name) {
         let value = "; " + document.cookie;
@@ -50,6 +50,11 @@
 
     // 获取语言设置
     var lang = getCookie('lang') || 'zh'; // 默认使用 'zh'
+</script>-->
+<script>
+    // 获取语言设置
+    var lang = sessionStorage.getItem('lang') || 'zh'; // 默认使用 'zh'
 </script>
+
 </body>
 </html>
