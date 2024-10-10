@@ -2,8 +2,28 @@
 // 获取当前页面的语言 (lang) 值，默认为 'zh'
 const currentLang = page.lang || 'zh';
 
-// 获取文章，过滤当前语言的文章并显示前5条
-const postsToShow = site.posts.filter(post => post.lang === currentLang).slice(0, 5);
+// 获取文章，按日期排序，过滤当前语言的文章并显示前5条
+const currentPostsToShow = site.posts
+        .filter(post => post.lang === currentLang)  // 过滤当前语言的文章
+const postsToShow = site.posts
+        .filter(post => post.lang === currentLang)  // 过滤当前语言的文章
+        .reduce((acc, post) => {
+            // 按日期插入文章，保持数组长度为 5
+            if (acc.length < 5) {
+                acc.push(post);
+            } else {
+                const minDatePost = acc.reduce((min, p) => new Date(p.date) < new Date(min.date) ? p : min);
+                if (new Date(post.date) > new Date(minDatePost.date)) {
+                    acc[acc.indexOf(minDatePost)] = post; // 替换最旧的文章
+                }
+            }
+            return acc;
+        }, [])
+        .sort((a, b) => new Date(b.date) - new Date(a.date)); // 排序
+// console.log("=========================================================")
+// console.table(currentPostsToShow.map(post => ({title: post.title, sor: post.sor})));
+// console.table(postsToShow.map(post => ({title: post.title, sor: post.sor})));
+// console.log(postsToShow.filter(post => post.sor === 3))
 %>
 
 <div class="post-list">
@@ -15,7 +35,8 @@ const postsToShow = site.posts.filter(post => post.lang === currentLang).slice(0
                        onclick="handleLinkClick(event, '<%= post.permalink %>')"><%= post.title %></a>
                 </h3>
                 <p><%= post.excerpt %></p>
-                <p class="post-date" style="margin-left: -10px;"><%= post.date.format('YYYY-MM-DD') %></p>
+                                <p class="post-date" style="margin-left: -10px;"><%= post.date.format('YYYY-MM-DD') %></p>
+<!--                <p class="post-date" style="margin-left: -10px;"><%= post.date %></p>-->
                 <a href="<%= post.permalink %>" class="post-detail-link"
                    onclick="handleLinkClick(event, '<%= post.permalink %>')"><%= __('home.detail') %></a>
             </div>

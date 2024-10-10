@@ -1,9 +1,20 @@
 <%
 // 获取当前页面的语言 (lang) 值，默认为 'zh'
 const currentLang = page.lang || 'zh';
-
 // 获取文章，过滤当前语言的文章
-const posts = site.posts.filter(post => post.lang === currentLang);
+let posts = site.posts.filter(post => post.lang === currentLang);
+
+// 按日期降序排列
+posts = posts.reduce((acc, post) => {
+    // 查找插入位置
+    let index = acc.findIndex(item => new Date(item.date) < new Date(post.date));
+    if (index === -1) {
+        acc.push(post); // 如果没有找到合适的位置，直接添加到数组末尾
+    } else {
+        acc.splice(index, 0, post); // 在找到的位置插入文章
+    }
+    return acc;
+}, []);
 %>
 <div class="sidebar3">
     <h3><i class="fas fa-newspaper"></i> <%= __('notice.title') %></h3>
@@ -126,6 +137,7 @@ const posts = site.posts.filter(post => post.lang === currentLang);
     .more-link:hover {
         text-decoration: underline;
     }
+
     /* 手机端样式调整 */
     @media only screen and (max-width: 768px) {
         .sidebar3 {
