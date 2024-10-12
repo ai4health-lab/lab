@@ -7,6 +7,6 @@ showDate: false
 
 ### 链接
 
-- [百度](https://www.baidu.com)
-- [哔哩哔哩](https://www.bilibili.com)
+- [基础前沿研究院](https://www.iffs.uestc.edu.cn)
+- [成都智算中心](https://www.cdzs.cn)
 

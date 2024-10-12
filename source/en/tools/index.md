@@ -7,6 +7,6 @@ showDate: false
 
 ### Links
 
-- [Baidu](https://www.baidu.com)
-- [Bilibili](https://www.bilibili.com)
+- [Institute of Fundamental and Frontier Sciences](https://www.iffs.uestc.edu.cn)
+- [Chengdu Intelligent Computing Center, CiCC](https://www.cdzs.cn)
 

@@ -1,6 +1,7 @@
 # 菜单配置
 menu:
   home: Home
+  photo: Album
   members: Members
   research: Research
   publications: Publications
