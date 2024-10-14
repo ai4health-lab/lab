@@ -125,6 +125,12 @@
                         </a>
                     </li>
                 
+                    <li>
+                        <a href="/lab/en/photo/">
+                            Album
+                        </a>
+                    </li>
+                
             </ul>
 
             <!-- 中英文切换滑动栏 -->
@@ -320,9 +326,347 @@
     <div class="sidebars" style="display: flex; flex-direction: column; gap: 20px;">
         <!-- 使用 flex-direction: column; 让侧边栏上下排列，并设置间距 -->
 
-        
+         <!-- 默认显示侧边栏，除非明确设置为 false -->
+        <!-- 侧边栏 -->
+<div class="sidebar1">
+    <h3><i class="fas fa-paper-plane"></i> Join Us</h3>
+    <a href="/lab/en/join/">PhD and Graduate Applications</a>
+</div>
+
+<style>
+    .sidebar1 {
+        width: 250px;
+        min-height: 120px;
+        border: 2px solid #ce0b0b;
+        border-radius: 5px;
+        background-color: #f9f9f9; /* 背景色 */
+    }
+
+    .sidebar1 h3 {
+        background-color: #ce0b0b;
+        color: white;
+        padding: 10px;
+        margin: 0; /* 移除默认的 margin */
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+
+    .sidebar1 a {
+        display: block;
+        text-align: center;
+        padding: 10px 0;
+        margin: 10px;
+        color: #000000;
+        font-size: 14px;
+        text-decoration: none; /* 移除默认的下划线 */
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .sidebar1 a:hover {
+        color: #0073e6; /* 鼠标悬停时标题字体变为蓝色 */
+    }
+
+    .sidebar1 p {
+        padding: 10px;
+        margin: 0;
+    }
+    @media only screen and (max-width: 768px) {
+        .sidebar1 {
+            width: 100%; /* 在手机端占满宽度 */
+            margin-bottom: 20px; /* 增加底部间距 */
+        }
+
+        .sidebar1 h3 {
+            font-size: 1.2em; /* 调整标题大小 */
+            padding: 8px; /* 减少内边距 */
+        }
+
+        .sidebar1 a {
+            font-size: 1em; /* 调整链接的字体大小 */
+            padding: 8px; /* 减少内边距 */
+            margin: 5px; /* 减少链接的外边距 */
+        }
+
+        .sidebar1 p {
+            font-size: 1em; /* 调整段落的字体大小 */
+            padding: 8px; /* 减少内边距 */
+        }
+    }
+</style>
 
         
+
+         <!-- 默认显示侧边栏，除非明确设置为 false -->
+        <!-- !侧边栏 -->
+<div class="sidebar2">
+    <h3><i class="fas fa-list"></i> Common Links</h3>
+    <a href="/lab/en/members/">concat us</a>
+</div>
+
+<style>
+    .sidebar2 {
+        width: 250px;
+        min-height: 120px;
+        border: 2px solid #ce0b0b;
+        border-radius: 5px;
+        background-color: #f9f9f9; /* 背景色 */
+    }
+
+    .sidebar2 h3 {
+        background-color: #ce0b0b;
+        color: white;
+        padding: 10px;
+        margin: 0; /* 移除默认的 margin */
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+
+    .sidebar2 a {
+        display: block;
+        text-align: center;
+        padding: 10px 0;
+        margin: 10px;
+        color: #000000;
+        font-size: 14px;
+        text-decoration: none; /* 移除默认的下划线 */
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .sidebar2 a:hover {
+        color: #0073e6; /* 鼠标悬停时标题字体变为蓝色 */
+    }
+
+    .sidebar2 p {
+        padding: 10px;
+        margin: 0;
+    }
+
+    /* 手机端样式调整 */
+    @media only screen and (max-width: 768px) {
+        .sidebar2 {
+            width: 100%; /* 在手机端占满宽度 */
+            margin-bottom: 20px; /* 增加底部间距 */
+        }
+
+        .sidebar2 h3 {
+            font-size: 1.2em; /* 调整标题大小 */
+            padding: 8px; /* 减少内边距 */
+        }
+
+        .sidebar2 a {
+            font-size: 1em; /* 调整链接的字体大小 */
+            padding: 8px; /* 减少内边距 */
+            margin: 5px; /* 减少链接的外边距 */
+        }
+
+        .sidebar2 p {
+            font-size: 1em; /* 调整段落的字体大小 */
+            padding: 8px; /* 减少内边距 */
+        }
+    }
+</style>
+
+        
+         <!-- 默认显示侧边栏，除非明确设置为 false -->
+        
+<div class="sidebar3">
+    <h3><i class="fas fa-newspaper"></i> news</h3>
+    
+        <ul class="news-list">
+            
+                <li class="news-item">
+                    <a href="https://ai4health-lab.github.io/lab/en/2024/09/28/en/NC2024/" onclick="handleLinkClick(event, 'https://ai4health-lab.github.io/lab/en/2024/09/28/en/NC2024/')"
+                       title="Capture of RNA-binding proteins across mouse tissues using HARD-AP">
+                        <span class="news-title">Capture of...</span>
+                        <span class="news-date">2024-09-28</span>
+                    </a>
+                </li>
+            
+                <li class="news-item">
+                    <a href="https://ai4health-lab.github.io/lab/en/2021/09/23/en/Science2021/" onclick="handleLinkClick(event, 'https://ai4health-lab.github.io/lab/en/2021/09/23/en/Science2021/')"
+                       title="Insights into human history from the first decade of ancient human genomics">
+                        <span class="news-title">Insights i...</span>
+                        <span class="news-date">2021-09-23</span>
+                    </a>
+                </li>
+            
+                <li class="news-item">
+                    <a href="https://ai4health-lab.github.io/lab/en/2021/06/10/en/Cell2021/" onclick="handleLinkClick(event, 'https://ai4health-lab.github.io/lab/en/2021/06/10/en/Cell2021/')"
+                       title="The deep population history of northern East Asia from the Late Pleistocene to the Holocene">
+                        <span class="news-title">The deep p...</span>
+                        <span class="news-date">2021-06-10</span>
+                    </a>
+                </li>
+            
+            
+        </ul>
+    
+</div>
+<style>
+    .sidebar3 {
+        width: 250px;
+        min-height: 120px;
+        border: 2px solid #ce0b0b;
+        border-radius: 5px;
+        background-color: #f9f9f9; /* 背景色 */
+    }
+
+    .sidebar3 h3 {
+        background-color: #ce0b0b;
+        color: white;
+        padding: 10px;
+        margin: 0;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+
+    .news-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .news-item {
+        border-bottom: 1px solid #ddd;
+        padding: 10px 10px;
+        display: flex;
+        justify-content: space-between; /* 标题和日期保持同一行 */
+        align-items: center;
+    }
+
+    .news-title {
+        font-size: 14px;
+        color: #000000;
+        margin-right: 10px; /* 控制标题与日期的间距 */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        transition: color 0.3s ease;
+    }
+
+    .news-date {
+        font-size: 12px;
+        color: #666666;
+    }
+
+    .news-item a {
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .news-item a:hover .news-title {
+        color: #0073e6; /* 鼠标悬停时标题字体变为蓝色 */
+    }
+
+    .pagination {
+        padding: 10px;
+        text-align: center;
+        font-size: 14px;
+        color: #000000;
+    }
+
+    .pagination span {
+        display: block;
+    }
+
+    .more-content.hidden {
+        display: none;
+    }
+
+    .more-link {
+        display: block;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+        color: #007bff;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .more-link:hover {
+        text-decoration: underline;
+    }
+
+    /* 手机端样式调整 */
+    @media only screen and (max-width: 768px) {
+        .sidebar3 {
+            width: 100%; /* 在手机端占满宽度 */
+            margin-bottom: 20px; /* 增加底部间距 */
+        }
+
+        .news-title {
+            font-size: 1em; /* 调整标题的字体大小 */
+        }
+
+        .news-date {
+            font-size: 0.9em; /* 调整日期的字体大小 */
+        }
+
+        .pagination {
+            font-size: 1em; /* 调整分页按钮的字体大小 */
+        }
+
+        .more-link {
+            font-size: 1em; /* 调整 "更多" 链接的字体大小 */
+        }
+    }
+</style>
+<!--
+<script>
+    function toggleContent(event) {
+        event.preventDefault();
+        const moreContent = document.getElementById('more-content');
+        if (moreContent) {
+            moreContent.classList.toggle('hidden');
+            event.target.textContent = moreContent.classList.contains('hidden') ? 'more' : 'less';
+        }
+    }
+
+    function getCookie(name) {
+        let value = "; " + document.cookie;
+        let parts = value.split("; " + name + "=");
+        if (parts.length === 2) return parts.pop().split(";").shift();
+    }
+
+    function handleLinkClick(event, url) {
+        event.preventDefault();
+        const lang = getCookie('lang') || 'zh';
+        const rootPath = '/lab/';
+        const newUrl = url.replace(/\/zh\//, `/${lang}/`).replace(/\/en\//, `/${lang}/`);
+        window.history.pushState(null, null, rootPath);
+        window.location.href = newUrl;
+    }
+
+</script>-->
+<script>
+    function toggleContent(event) {
+        event.preventDefault();
+        const moreContent = document.getElementById('more-content');
+        if (moreContent) {
+            moreContent.classList.toggle('hidden');
+            event.target.textContent = moreContent.classList.contains('hidden') ? 'more' : 'less';
+        }
+    }
+
+    // 获取语言设置
+    function getSessionLanguage() {
+        return sessionStorage.getItem('lang') || 'zh'; // 默认使用 'zh'
+    }
+
+    function handleLinkClick(event, url) {
+        event.preventDefault();
+        const lang = getSessionLanguage();
+        const rootPath = '/lab/';
+        const newUrl = url.replace(/\/zh\//, `/${lang}/`).replace(/\/en\//, `/${lang}/`);
+        window.history.pushState(null, null, rootPath);
+        window.location.href = newUrl;
+    }
+</script>
+
         
     </div>
     <!-- 内容区域 -->
@@ -330,12 +674,42 @@
         <article class="post">
     <header class="post-header">
         <div class="post-title">
-            <h3>Members</h3>
+            <h3>Research Members</h3>
         </div>
         
     </header>
     <div class="post-content">
-        <h2 id="Mentors"><a href="#Mentors" class="headerlink" title="Mentors"></a>Mentors</h2><h2 id="PhD-Students"><a href="#PhD-Students" class="headerlink" title="PhD Students"></a>PhD Students</h2><h2 id="Graduate-Students"><a href="#Graduate-Students" class="headerlink" title="Graduate Students"></a>Graduate Students</h2>
+        <h2 id="Supervisor"><a href="#Supervisor" class="headerlink" title="Supervisor"></a>Supervisor</h2><h3 id="Mao-Xiaowei"><a href="#Mao-Xiaowei" class="headerlink" title="Mao Xiaowei"></a>Mao Xiaowei</h3><p><strong>Position:</strong> Professor, Researcher, PhD Supervisor, Head of the Big Data Life and Intelligent Health Laboratory at the University of Electronic Science and Technology<br><strong>Research Areas:</strong> Computational Biology, Statistical Genetics, Phenotyping, Molecular Epidemiology<br><strong>Biography:</strong><br>His main research area is the causal markers analysis of complex traits related to human diseases. He has been dedicated to interdisciplinary research combining biomedical sciences, informatics, and statistics to elucidate the genetic and evolutionary mechanisms of human disease-related complex traits. In recent years, he has published 9 important papers as the first or corresponding author in journals such as <em>Science</em> and <em>Cell</em>. He was selected for the Chinese Academy of Sciences Talent Program and the Beijing Science and Technology New Star Program (Medical Direction). During his master’s and doctoral studies, he received the EU “Erasmus Mundus World Program” funding twice to conduct research related to complex trait gene mapping, supported by the National Natural Science Foundation of China’s interdisciplinary projects. He has led projects funded by the Ministry of Science and Technology’s National Key Research and Development Program, participated in significant projects funded by the National Natural Science Foundation, and received the outstanding funding for technology activities from returned overseas students in Sichuan Province. He has been invited to present at the 5th International Quantitative Genetics Conference and the 11th World Congress of Genetics.</p>
+<h2 id="Postdoctoral-Researchers"><a href="#Postdoctoral-Researchers" class="headerlink" title="Postdoctoral Researchers"></a>Postdoctoral Researchers</h2><h3 id="Tang-Qiming"><a href="#Tang-Qiming" class="headerlink" title="Tang Qiming"></a>Tang Qiming</h3><p><strong>Biography:</strong> PhD graduate from the University of Chinese Academy of Sciences. He has published 4 SCI papers as the first author or co-first author (3 papers with IF &gt; 5, 2 papers in Zone 1 of the Chinese Academy of Sciences), and has participated in 6 national research projects.<br><strong>Contact:</strong> <a href="mailto:&#116;&#97;&#110;&#x67;&#x71;&#105;&#109;&#x69;&#x6e;&#x67;&#64;&#117;&#x65;&#x73;&#116;&#99;&#46;&#x65;&#x64;&#117;&#46;&#99;&#x6e;">&#116;&#97;&#110;&#x67;&#x71;&#105;&#109;&#x69;&#x6e;&#x67;&#64;&#117;&#x65;&#x73;&#116;&#99;&#46;&#x65;&#x64;&#117;&#46;&#99;&#x6e;</a></p>
+<h3 id="Huang-Yanju"><a href="#Huang-Yanju" class="headerlink" title="Huang Yanju"></a>Huang Yanju</h3><p><strong>Biography:</strong> PhD graduate from China Agricultural University. Her research results have been published in <em>Cell Reports</em> (first author) and <em>PNAS</em>, and she has participated in 4 national research projects.<br><strong>Contact:</strong> <a href="mailto:&#104;&#x75;&#97;&#x6e;&#x67;&#121;&#x61;&#110;&#x6a;&#117;&#x40;&#x75;&#x65;&#x73;&#x74;&#99;&#x2e;&#101;&#x64;&#117;&#46;&#x63;&#110;">&#104;&#x75;&#97;&#x6e;&#x67;&#121;&#x61;&#110;&#x6a;&#117;&#x40;&#x75;&#x65;&#x73;&#x74;&#99;&#x2e;&#101;&#x64;&#117;&#46;&#x63;&#110;</a></p>
+<h2 id="Current-PhD-Students"><a href="#Current-PhD-Students" class="headerlink" title="Current PhD Students"></a>Current PhD Students</h2><ul>
+<li><strong>Li Jielin</strong>: Biomedical Engineering</li>
+<li><strong>Fan Ao</strong>: Computer Science and Technology</li>
+<li><strong>Huang Qihan</strong>: Computer Science and Technology</li>
+</ul>
+<h2 id="Current-Master’s-Students"><a href="#Current-Master’s-Students" class="headerlink" title="Current Master’s Students"></a>Current Master’s Students</h2><ul>
+<li><strong>Mi Haoyang</strong>: Electronic Information</li>
+<li><strong>Xie Zhenglong</strong>: Electronic Information</li>
+<li><strong>Wang Zhengnan</strong>: Electronic Information</li>
+<li><strong>Sun Ningbo</strong>: Biomedical Engineering</li>
+<li><strong>Ye Zhongni</strong>: Biomedical Engineering</li>
+<li><strong>Xiong Chenyu</strong>: Biomedical Engineering</li>
+<li><strong>Xiang Yu</strong>: Biomedical Engineering</li>
+<li><strong>Zhang Zhanyu</strong>: Biomedical Engineering</li>
+<li><strong>Feng Jiaheng</strong>: Biomedical Engineering</li>
+</ul>
+<h2 id="Joint-Training"><a href="#Joint-Training" class="headerlink" title="Joint Training"></a>Joint Training</h2><ul>
+<li><strong>Wan Zhicheng</strong></li>
+<li><strong>Cai Zhongkun</strong></li>
+</ul>
+<h2 id="Staff"><a href="#Staff" class="headerlink" title="Staff"></a>Staff</h2><ul>
+<li><strong>Zhang Kaijiong</strong>: Associate Chief Physician</li>
+<li><strong>Zhang Fanyang</strong>: Administrative Secretary</li>
+<li><strong>Zhang Qi</strong>: Research Assistant</li>
+<li><strong>Yuan Rui</strong>: Assistant Engineer</li>
+<li><strong>Ye Qiao</strong>: Research Assistant</li>
+</ul>
+
     </div>
 </article>
 

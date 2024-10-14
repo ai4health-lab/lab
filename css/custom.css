@@ -52,13 +52,13 @@
 }
 
 .nav-bar ul li {
-    margin: 0 15px;
+    margin: 0 8px;
 }
 
 .nav-bar ul li a {
     color: white;
     font-weight: bold;
-    padding: 10px 40px;
+    padding: 10px 30px;
     text-decoration: none;
     display: inline-block;
     position: relative; /* 为了让底部横线相对于链接定位 */
@@ -75,7 +75,7 @@
 /* 语言切换器样式 */
 .language-switcher {
     position: absolute;
-    right: 10px; /* 调整右边距 */
+    right: 20px; /* 调整右边距 */
     top: 50%; /* 垂直居中 */
     transform: translateY(-50%); /* 垂直居中对齐 */
     display: flex;
