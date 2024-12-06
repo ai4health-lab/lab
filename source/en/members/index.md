@@ -58,4 +58,4 @@ His main research area is the causal markers analysis of complex traits related 
 - **Zhang Fanyang**: Administrative Secretary
 - **Zhang Qi**: Research Assistant
 - **Yuan Rui**: Assistant Engineer
-- **Ye Qiao**: Research Assistant
+- **Liu Qiao**: Research Assistant
